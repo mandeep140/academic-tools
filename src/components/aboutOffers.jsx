@@ -71,7 +71,7 @@ export default function AboutOffers() {
                                 {item.tags.map((tag, idx) => (
                                     <span
                                         key={idx}
-                                        className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full border"
+                                        className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full   border"
                                     >
                                         {tag}
                                     </span>
