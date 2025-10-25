@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+
+body p {
+    font-family: 'Roboto';
+    color: #718096;
+}
+
+h2 {
+    font-family: 'Poopins';
+    color: #2D3748;
+    font-size: 5rem;
+}
+
+
+.btn {
+    text-decoration: none;
+    color: #2d3748;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    font-family: roboto;
+}
+
+.btn:hover{
+    color: #f9b94e;
+    background-color:#dfffc4;
+}
+
+
+.btn:active{
+    color: white;
+    background-color: #f9b94e;
+}
