@@ -22,13 +22,18 @@ h2 {
     font-family: roboto;
 }
 
-.btn:hover{
+.btn:hover {
     color: #f9b94e;
-    background-color:#dfffc4;
+    background-color: #dfffc4;
 }
 
 
-.btn:active{
+.btn:active {
     color: white;
     background-color: #f9b94e;
+}
+
+
+.font-p {
+    font-family: 'Poppins', sans-serif;
 }

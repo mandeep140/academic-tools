@@ -1,3 +1,20 @@
+//icons
+import { FaBoxes } from "react-icons/fa";
+import { GiStarsStack } from "react-icons/gi";
+import { BsPersonHearts } from "react-icons/bs";
+import { SiFiles } from "react-icons/si";
+
+//
+import { RiUserHeartFill } from "react-icons/ri";
+import { HiLightBulb } from "react-icons/hi";
+import { BsFillLightningChargeFill } from "react-icons/bs";
+import { GiSlumberingSanctuary } from "react-icons/gi";
+
+
+import { GiCloudRing } from "react-icons/gi";
+
+
+
 
 
 
@@ -7,25 +24,25 @@ export default function AboutAT() {
 
     const Boxes = [
         {
-            icon: "📘",
+            icon: <FaBoxes/>,
             value: "X+",
             label: "Tools Available",
         },
 
         {
-            icon: "👥",
+            icon: <BsPersonHearts   className=' '/>,
             value: "X+",
             label: "Happy Users",
         },
 
         {
-            icon: "⚡",
+            icon: < SiFiles/>,
             value: "X+",
             label: "Files Processed",
         },
 
         {
-            icon: "⭐",
+            icon: <GiStarsStack/>,
             value: "XX",
             label: "User Rating",
         },
@@ -40,26 +57,25 @@ export default function AboutAT() {
 
     const DBox = [
         {
-            icon: "++",
+            icon: <GiSlumberingSanctuary />,
             title: "Simplicity First",
             para: "We believe great tools should be intuitive and easy to use, not complicated.",
         },
 
         {
-            icon: "++",
+            icon: <BsFillLightningChargeFill/> ,
             title: "Productivity Focus",
             para: "Every tool is designed to save time and boost your academic productivity.",
         },
 
         {
-            icon: "++",
+            icon: <RiUserHeartFill/>,
             title: "Student-Centered",
             para: "Built by students, for students. We understand your needs and challenges.",
         },
 
         {
-            icon: "++",
-            title: "Innovation",
+            title: <HiLightBulb/> ,
             para: "Constantly evolving with new features and tools based on user feedback.",
         },
     ];
@@ -78,19 +94,19 @@ export default function AboutAT() {
 
     return (
 
-        <div>
+        <div className=' bg-[#dfffc4] '>
 
 
 
-            <div className=" mt-20 mb-16  h-96 w-full bg-red-300 text-center  pt-20 ">
+            <div className=" mt-20 mb-16  h-96 w-full  text-center  pt-20 ">
 
                 <div className="h-24 w-24 bg-amber-500  mx-auto  rounded-2xl  grid place-items-center  ">
                     +++
                 </div>
 
 
-                <h3 className="text-6xl  py-6">About Academic Tools</h3>
-                <p className="text-2xl pt-4">Academic Tools is built to make student productivity faster, easier, and smarter. We provide a <br />comprehensive suite of tools designed specifically for academic success.</p>
+                <h3 className="text-5xl  py-6  font-p">About Academic Tools</h3>
+                <p className="text-xl pt-4">Academic Tools is built to make student productivity faster, easier, and smarter. We provide a <br />comprehensive suite of tools designed specifically for academic success.</p>
 
 
             </div >
@@ -101,11 +117,10 @@ export default function AboutAT() {
             {/* our mission */}
 
 
-            <div className="h-76 w-3/4 rounded-2xl border outline-black  bg-purple-200 shadow-xl text-center grid place-items-center mx-auto  ">
-                <div className="h-28  w-32  bg-amber-700">icon</div>
-                <h3 className="text-5xl py-2"> Our Mission</h3>
-                <p className="text-xl  "  > To empower students and academics with innovative, easy-to-use tools that streamline workflows, enhance
-                    learning, and boost productivity. We believe technology should simplify education, not complicate it.</p>
+            <div className="h-76 w-3/4 rounded-2xl    shadow-xl/20  text-center grid place-items-center mx-auto py-8 ">
+                <div className="h-28  w-32  bg-amber-700  "> <GiCloudRing/>  </div>
+                <h3 className="text-4xl py-4"> Our Mission</h3>
+                <p className="text-lg  "  > To empower students and academics with innovative, easy-to-use tools that streamline workflows, enhance  <br />learning, and boost productivity. We believe technology should simplify education, not complicate it.</p>
             </div>
 
 
@@ -119,7 +134,7 @@ export default function AboutAT() {
             {/* small boxes */}
 
 
-            <div className="bg-red-500 flex items-center justify-center  h-76   my-16">
+            <div className=" flex items-center justify-center  h-76   my-16">
 
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -155,14 +170,14 @@ export default function AboutAT() {
 
 
             {/* our values div */}
-            <div className=" p-4  bg-amber-200 text-center">
+            <div className=" p-4   text-center">
 
-                <h3 className=" text-5xl m-8">Our Values</h3>
+                <h3 className=" text-4xl m-8">Our Values</h3>
 
                 <p className="text-2xl">The principles that guide everything we build and every decision we make</p>
 
 
-                <div className="bg-amber-800  h-112  flex items-center justify-center  ">
+                <div className="  h-112  flex items-center justify-center  ">
 
 
                     <div className=" grid grid-cols-1 md:grid-cols-2  gap-8">
