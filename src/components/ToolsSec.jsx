@@ -1,10 +1,13 @@
 import ToolCardList from './toolCardList'
 import DisableBtn from './disableBtn';
+import { RiCameraLensFill } from "react-icons/ri";
+
+
 
 export default function ToolsSec() {
     return (
 
-        <section className="w-full bg-green-100  h-272  py-16 px-20 text-center">
+        <section className="w-full bg-[#e9f8d8]  h-256  py-16 px-20 text-center">
 
             <div className="">
                 <h2> Popular Tools</h2>
@@ -15,7 +18,7 @@ export default function ToolsSec() {
                 <ToolCardList />
             </div>
 
-            <DisableBtn label="View All 15 Tools ->>> " />
+            <DisableBtn label="View All 15 Tools  "  />
 
         </section>
 

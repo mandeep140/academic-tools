@@ -11,7 +11,7 @@ export default function ToolInput() {
 
 
 
-            <div className=" bg-[#dfffc4]  mt-20 text-center  pt-8">
+            <div className=" Bg-Color  mt-20 text-center  pt-8">
                 <h3 className="text-5xl  py-8  font-p "> Explore Tools </h3>
                 <p className="text-xl   "> Discover our comprehensive collection of academic tools designed to enhance your <br /> productivity and learning experience. </p>
 

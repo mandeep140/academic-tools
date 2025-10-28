@@ -1,20 +1,19 @@
 import DetailsBoxList from "./detailsBoxList";
 import ContainBtn from "./containBtn"
-
+import { LuSparkles } from "react-icons/lu";
 
 export default function Details() {
     return (
 
-        <section className="w-full bg-green-200  h-296  text-center">
+        <section className="w-full  Bg-Color  h-278  text-center  pt-3">
 
 
             <div>
                 <h2 className="pt-12">Why Choose Academic Tools?</h2>
-                <p className="text-2xl my-8">Built by students, for students. Every tool is designed with academic
-                    excellence in mind.</p>
+                <p className="text-2xl my-8">Built by students, for students. Every tool is designed with academic <br />  excellence in mind.</p>
 
 
-                <div className="my-20">
+                <div className="my-20  ">
                     <DetailsBoxList />
                 </div>
             </div>
@@ -23,11 +22,16 @@ export default function Details() {
 
 
 
-            <div className="mt-56">
+            <div className="mt-48">
                 <h2>Ready to boost your productivity?</h2>
-                <p className="text-2xl my-8" >Join thousands of students who have already transformed their academic workflow with our tools.</p>
+                <p className="text-2xl my-8  pb-4" >Join thousands of students who have already transformed their academic <br />  workflow with our tools.</p>
 
-                <ContainBtn label="Start Using Tools Now ++ " />
+
+
+                
+                    <ContainBtn label="Start Using Tools Now " />
+                    
+                
             </div>
 
 

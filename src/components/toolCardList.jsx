@@ -15,12 +15,12 @@ export default function ToolCardList() {
 
         <div className="  grid grid-cols-3  grid-rows-2 items-center justify-items-center  gap-y-12  ">
 
-            <ToolCard title="File Converter" para="Convert between PDF, Word, Excel, PPT, and Images" icon={<DescriptionOutlinedIcon />} />
-            <ToolCard title="Image Compressor" para="Compress and resize images efficiently" icon={<CollectionsOutlinedIcon />} />
-            <ToolCard title="Plagiarism Checker" para="Check text for plagiarism and originality" icon={<SearchOutlinedIcon />} />
-            <ToolCard title="Grammar Checker" para="Check and correct grammar and spelling errors" icon={<TaskAltOutlinedIcon />} />
-            <ToolCard title="Citation Generator" para="Generate APA, MLA, and IEEE citations" icon={<GeneratingTokensOutlinedIcon />} />
-            <ToolCard title="PDF Tools" para="Merge, split, protect, and compress PDFs" icon={<PictureAsPdfOutlinedIcon />} />
+            <ToolCard title="File Converter" para="Convert between PDF, Word, Excel, PPT, and Images" icon={<DescriptionOutlinedIcon      />} />
+            <ToolCard title="Image Compressor" para="Compress and resize images efficiently" icon={<CollectionsOutlinedIcon    />} />
+            <ToolCard title="Plagiarism Checker" para="Check text for plagiarism and originality" icon={<SearchOutlinedIcon    />} />
+            <ToolCard title="Grammar Checker" para="Check and correct grammar and spelling errors" icon={<TaskAltOutlinedIcon    />} />
+            <ToolCard title="Citation Generator" para="Generate APA, MLA, and IEEE citations" icon={<GeneratingTokensOutlinedIcon    />} />
+            <ToolCard title="PDF Tools" para="Merge, split, protect, and compress PDFs" icon={<PictureAsPdfOutlinedIcon    />} />
 
         </div >
     );

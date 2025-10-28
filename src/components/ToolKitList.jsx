@@ -20,7 +20,7 @@ import { RiBrainFill } from "react-icons/ri";
 //
 
 import { FaListCheck } from "react-icons/fa6";
-
+import { IoDocuments } from "react-icons/io5";
 
 import { FaFilePen } from "react-icons/fa6";
 
@@ -29,7 +29,7 @@ export default function ToolKitList() {
 
 
 
-        <div className="bg-[#dfffc4]  py-16">
+        <div className="Bg-Color  py-16">
 
             <span className="text-2xl font-medium ml-16  underline underline-offset-2  font-p  ">Showing  &nbsp; 15  of  15  &nbsp; Tools</span>
 

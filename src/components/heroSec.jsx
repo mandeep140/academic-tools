@@ -1,5 +1,6 @@
 import DisableBtn from "./disableBtn";
 import ContainBtn from "./containBtn";
+import { LuSparkles } from "react-icons/lu";
 
 import SBoxesList from './SBoxesList'
 
@@ -8,23 +9,24 @@ import SBoxesList from './SBoxesList'
 
 export default function HeroSec() {
     return (
-        <section className="w-full bg-[#dfffc4]  h-228  py-16 px-20  text-center ">
+        <section className="w-full Bg-Color  h-228  py-20 px-20   text-center ">
 
 
 
-            <div className="rounded-2xl bg-white mt-12  mb-8  h-8 w-84  mx-auto">
-                icon
-                <span  >  15 Academic Tools & Growing </span>
-            </div>
+            
+                
+                <span  className="rounded-3xl bg-white mt-24  mb-8   w-76  mx-auto  flex  text-center  px-6  py-1.5  font-medium" > 
+                    < LuSparkles className=" txtColor-Org  text-xl"/>  &nbsp;  &nbsp;  15 Academic Tools & Growing </span>
+            
 
 
-            <span className="w-full text-8xl font-medium">Academic Tools </span> <br />
-            <span className="w-full  text-8xl  text-amber-500 font-medium "> Made Simple </span>
+            <span className="poppins  w-full text-7xl font-medium">Academic Tools </span> <br />
+            <span className="  poppins  w-full  text-7xl  text-amber-500 font-medium "> Made Simple </span>
 
 
 
-            <p className="my-16 text-3xl">
-                Supercharge your academic productivity with our comprehensive suite of <br />
+            <p className="my-12 text-2xl/10   ">
+                Supercharge your academic productivity with our comprehensive suite  <br /> of
                 <span className=" text-amber-500 font-semibold"> AI-powered</span>   tools designed specifically for students and researchers.
             </p>
 
@@ -33,7 +35,7 @@ export default function HeroSec() {
                 <DisableBtn label="Learn More " />
             </div>
 
-            <div className="mx-auto">
+            <div className="mx-auto  ">
                 <SBoxesList />
             </div>
 

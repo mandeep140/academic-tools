@@ -1,10 +1,10 @@
 export default function DetailsBox({icon, title, para, bgcolor}) {
     return(
 
-        <div  className="h-72  w-lg bg-green-200 rounded-2xl      grid  place-items-center">
-            <div className={ `h-24 w-24 rounded-3xl  grid  place-items-center ${bgcolor}`   }  >  {icon} </div>
-            <h3 className="text-3xl  font-bold">   {title} </h3>
-            <p className="text-2xl ">  {para} </p>
+        <div  className="h-66  w-md rounded-2xl  shadow-md    grid  place-items-center">
+            <div className={ ` rounded-2xl  p-4 ${bgcolor}  `   }  >  {icon} </div>
+            <h3 className="text-2xl  font-bold  font-p">   {title} </h3>
+            <p className="text-lg ">  {para} </p>
         </div>
 
     );

@@ -11,6 +11,7 @@ import { FaLightbulb } from "react-icons/fa6";
 import { GiArchiveResearch } from "react-icons/gi";
 
 
+import { BsFillSuitHeartFill } from "react-icons/bs";
 
 export default function AboutOffers() {
     const offers = [
@@ -46,7 +47,7 @@ export default function AboutOffers() {
 
 
 
-        <div className=" bg-[#dfffc4] ">
+        <div className=" Bg-Color ">
 
             <div className="  flex flex-col items-center py-16 px-4  ">
 
@@ -109,8 +110,8 @@ export default function AboutOffers() {
                 <p className="text-2xl  my-8">Dedicated professionals committed to enhancing your academic experience</p>
 
 
-                <div className=" bg-red-500  h-100 w-100  shadow-xl  rounded-2xl  mb-8 mx-auto  ">
-                    <div className="h-32  w-32  rounded-bl-full bg-amber-300  pl-12 pt-6  text-5xl">   <  HiUserGroup/> </div>
+                <div className=" bg-white  h-100 w-100  shadow-md  rounded-2xl  mb-8 mx-auto  ">
+                    <div className="h-32  w-32  rounded-bl-full bg-[#f9b94e]  text-white pl-12 pt-6  text-5xl">   <  HiUserGroup/> </div>
                     <h3 className="text-3xl  py-8  font-p ">Academic Tools Team</h3>
                     <p className="text-xl  text-green-700 ">Development & Design</p>
                     <p className="pt-8  text-xl">Passionate about creating tools that enhance learning and productivity for <br /> students worldwide.</p>
@@ -120,7 +121,7 @@ export default function AboutOffers() {
 
 
                 <div className="h-104 w-3/4  py-4 mx-auto my-20 rounded-2xl  shadow-xl/20   grid  place-items-center">
-                    <div className="rounded-2xl  text-color  text-8xl  p-2" >  <IoMailUnreadSharp/> </div>
+                    <div className="rounded-2xl  txtColor-Org   text-8xl  p-2" >  <IoMailUnreadSharp/> </div>
                     <h3 className="text-4xl  "> Get in Touch </h3>
                     <p className="text-2xl">Have questions, suggestions, or feedback? We'd love to hear from you. Your input  <br /> helps us build better tools for the academic community.</p>
                     
@@ -133,7 +134,7 @@ export default function AboutOffers() {
                 </div>
 
 
-                <p className="text-lg">Built by learners, for learners ## <br />because academic life deserves better tools!</p>
+                <p className="text-lg">Built by learners, for learners   <br />because academic life deserves better tools!</p>
 
             </div>
 

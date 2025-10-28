@@ -7,9 +7,9 @@ body p {
 }
 
 h2 {
-    font-family: 'Poopins';
+    font-family: "poppins";
     color: #2D3748;
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 
@@ -34,10 +34,31 @@ h2 {
 }
 
 
+
+
+
+
+
+
+
+
 .font-p {
     font-family: 'Poppins', sans-serif;
 }
 
-.text-color {
+.txtColor-Org {
     color: #f9b94e;
+}
+
+
+.Bg-Color {
+    background-color: #dfffc4;
+}
+
+
+
+
+
+.poppins {
+    font-family: "poppins";
 }
