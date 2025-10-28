@@ -57,7 +57,7 @@ export default function AboutAT() {
 
     const DBox = [
         {
-            icon: <GiSlumberingSanctuary />,
+            icon: <GiSlumberingSanctuary  />,
             title: "Simplicity First",
             para: "We believe great tools should be intuitive and easy to use, not complicated.",
         },
@@ -75,7 +75,8 @@ export default function AboutAT() {
         },
 
         {
-            title: <HiLightBulb/> ,
+            icon:  <HiLightBulb/> ,
+            title:  " Innovation  ",
             para: "Constantly evolving with new features and tools based on user feedback.",
         },
     ];
@@ -118,7 +119,7 @@ export default function AboutAT() {
 
 
             <div className="h-76 w-3/4 rounded-2xl    shadow-xl/20  text-center grid place-items-center mx-auto py-8 ">
-                <div className="h-28  w-32  bg-amber-700  "> <GiCloudRing/>  </div>
+                <div className=" bg-amber-700  text-white  text-8xl p-2"> <GiCloudRing/>  </div>
                 <h3 className="text-4xl py-4"> Our Mission</h3>
                 <p className="text-lg  "  > To empower students and academics with innovative, easy-to-use tools that streamline workflows, enhance  <br />learning, and boost productivity. We believe technology should simplify education, not complicate it.</p>
             </div>
@@ -144,7 +145,7 @@ export default function AboutAT() {
                             className="bg-green-300 w-68 h-54 rounded-2xl shadow-lg p-8 flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105"
                         >
 
-                            <div className="bg-yellow-400 text-white text-3xl rounded-lg p-3 mb-4">
+                            <div className="bg-yellow-400 text-white text-3xl rounded-xl p-3 mb-4">
                                 {items.icon}
                             </div>
 
@@ -190,7 +191,7 @@ export default function AboutAT() {
                             >
 
 
-                                <div className="bg-yellow-200 text-white text-3xl rounded-lg p-3 mb-4  mr-8">
+                                <div className="bg-yellow-200 text-white text-4xl rounded-lg p-3 mb-4  mr-8">
                                     {item.icon}
                                 </div>
 

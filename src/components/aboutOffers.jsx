@@ -14,21 +14,21 @@ import { GiArchiveResearch } from "react-icons/gi";
 export default function AboutOffers() {
     const offers = [
         {
-            icon: <GiNotebook/>,
+            icon: <GiNotebook  />,
             bgColor: "bg-gradient-to-r from-blue-500 to-blue-600",
             title: "File Management",
             desc: "Convert, compress, and manage your academic files with ease. Support for all major formats.",
             tags: ["PDF Tools", "File Converter", "Image Compressor"],
         },
         {
-            icon: <GiArchiveResearch/>,
+            icon: <GiArchiveResearch />,
             bgColor: "bg-gradient-to-r from-green-500 to-green-600",
             title: "Writing & Research",
             desc: "Improve your writing with grammar checking, plagiarism detection, and citation generation.",
             tags: ["Grammar Checker", "Citations", "Plagiarism"],
         },
         {
-            icon: <FaLightbulb/>,
+            icon: <FaLightbulb  />,
             bgColor: "bg-gradient-to-r from-purple-500 to-purple-600",
             title: "Study & Productivity",
             desc: "Organize your studies with flashcards, mind maps, and task management tools.",
@@ -63,7 +63,7 @@ export default function AboutOffers() {
                             className=" w-96  h-88   bg-white rounded-3xl shadow-md p-8 text-center transition-transform duration-300 hover:scale-105" >
 
                             <div
-                                className={`w-20 h-20 mx-auto mb-5 rounded-3xl flex items-center justify-center ${item.bgColor}`}>
+                                className={` w-20 h-20 mx-auto mb-5 rounded-3xl p-4  text-white  text-5xl ${item.bgColor}`}>
                                 {item.icon}
 
                             </div>
@@ -119,7 +119,7 @@ export default function AboutOffers() {
 
 
                 <div className="h-104 w-3/4  py-4 mx-auto my-20 rounded-2xl  shadow-xl/20  text-center grid place-items-center">
-                    <div className="h-24  w-28 rounded-2xl bg-amber-700">  <IoMailUnreadSharp/> </div>
+                    <div className="rounded-2xl bg-amber-700  text-white  text-8xl  p-2" >  <IoMailUnreadSharp/> </div>
                     <h3 className="text-4xl  "> Get in Touch </h3>
                     <p className="text-2xl">Have questions, suggestions, or feedback? We'd love to hear from you. Your input  <br /> helps us build better tools for the academic community.</p>
                     
