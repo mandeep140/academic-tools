@@ -5,7 +5,8 @@ import { IoMailUnreadSharp } from "react-icons/io5";
 import { HiUserGroup } from "react-icons/hi2";
 
 
-import { GiNotebook } from "react-icons/gi";
+
+import { ImBooks } from "react-icons/im";
 import { FaLightbulb } from "react-icons/fa6";
 import { GiArchiveResearch } from "react-icons/gi";
 
@@ -14,7 +15,7 @@ import { GiArchiveResearch } from "react-icons/gi";
 export default function AboutOffers() {
     const offers = [
         {
-            icon: <GiNotebook  />,
+            icon: < ImBooks/>,
             bgColor: "bg-gradient-to-r from-blue-500 to-blue-600",
             title: "File Management",
             desc: "Convert, compress, and manage your academic files with ease. Support for all major formats.",
@@ -118,8 +119,8 @@ export default function AboutOffers() {
 
 
 
-                <div className="h-104 w-3/4  py-4 mx-auto my-20 rounded-2xl  shadow-xl/20  text-center grid place-items-center">
-                    <div className="rounded-2xl bg-amber-700  text-white  text-8xl  p-2" >  <IoMailUnreadSharp/> </div>
+                <div className="h-104 w-3/4  py-4 mx-auto my-20 rounded-2xl  shadow-xl/20   grid  place-items-center">
+                    <div className="rounded-2xl  text-color  text-8xl  p-2" >  <IoMailUnreadSharp/> </div>
                     <h3 className="text-4xl  "> Get in Touch </h3>
                     <p className="text-2xl">Have questions, suggestions, or feedback? We'd love to hear from you. Your input  <br /> helps us build better tools for the academic community.</p>
                     

@@ -1,5 +1,5 @@
 import DesignBtn from "./designBtn";
-
+import { IoMdSearch } from "react-icons/io";
 
 
 
@@ -15,7 +15,7 @@ export default function ToolInput() {
                 <h3 className="text-5xl  py-8  font-p "> Explore Tools </h3>
                 <p className="text-xl   "> Discover our comprehensive collection of academic tools designed to enhance your <br /> productivity and learning experience. </p>
 
-                <input type="text" placeholder="Search Tools..."
+                <input type="text"           placeholder="Search Tools..."
                     className=" h-8 w-xl  rounded-full  text-center  my-12  border border-[#f9b94e]" />
 
 

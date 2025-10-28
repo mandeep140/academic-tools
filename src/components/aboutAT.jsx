@@ -119,7 +119,7 @@ export default function AboutAT() {
 
 
             <div className="h-76 w-3/4 rounded-2xl    shadow-xl/20  text-center grid place-items-center mx-auto py-8 ">
-                <div className=" bg-amber-700  text-white  text-8xl p-2"> <GiCloudRing/>  </div>
+                <div className="  text-color  text-8xl p-2"> <GiCloudRing/>  </div>
                 <h3 className="text-4xl py-4"> Our Mission</h3>
                 <p className="text-lg  "  > To empower students and academics with innovative, easy-to-use tools that streamline workflows, enhance  <br />learning, and boost productivity. We believe technology should simplify education, not complicate it.</p>
             </div>
