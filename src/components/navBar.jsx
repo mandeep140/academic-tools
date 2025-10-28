@@ -7,7 +7,7 @@ import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 
 export default function NavBar() {
     return (
-        <div className="bg-white  w-full  h-20  shadow-md flex  items-center  justify-around fixed top-0 left-0">
+        <div className="bg-white  w-full  h-20  shadow-md flex  items-center  justify-around fixed top-0 left-0  z-100">
 
             <div className=" flex  items-center ">
                 <AutoStoriesIcon /> &nbsp; &nbsp;

@@ -110,8 +110,8 @@ export default function AboutOffers() {
                 <p className="text-2xl  my-8">Dedicated professionals committed to enhancing your academic experience</p>
 
 
-                <div className=" bg-white  h-100 w-100  shadow-md  rounded-2xl  mb-8 mx-auto  ">
-                    <div className="h-32  w-32  rounded-bl-full bg-[#f9b94e]  text-white pl-12 pt-6  text-5xl">   <  HiUserGroup/> </div>
+                <div className=" bg-white  h-100 w-100  shadow-md  rounded-2xl  mb-8 mx-auto  pt-8  ">
+                    <div className="h-24  w-24  rounded-full bg-[#f9b94e]  text-white  mx-auto text-5xl grid place-items-center">   <  HiUserGroup/> </div>
                     <h3 className="text-3xl  py-8  font-p ">Academic Tools Team</h3>
                     <p className="text-xl  text-green-700 ">Development & Design</p>
                     <p className="pt-8  text-xl">Passionate about creating tools that enhance learning and productivity for <br /> students worldwide.</p>

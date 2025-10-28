@@ -3,7 +3,7 @@ export default function ToolKit({ bgcolor, icon, title, para, tags }) {
 
 
 
-        <div className="bg-purple-200  shadow-md  h-82  w-80  rounded-2xl  p-4  pt-6  hover:shadow-xl transition  ">
+        <div className="bg-purple-200  shadow-md  h-82  w-80   rounded-2xl  p-4  pt-6  hover:shadow-xl transition  hover:scale-106  ">
 
 
             <div className="flex items-start justify-between">

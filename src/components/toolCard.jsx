@@ -6,7 +6,7 @@ export default function ToolCard({ title, para, icon }) {
 
             <div className="flex  items-center justify-between ml-6 mr-12 mt-4">
                 <div className="h-16  w-16 rounded-3xl bg-amber-100 grid  place-items-center text-amber-600   "> {icon}  </div>
-                <span className="text-2xl font-semibold"> {title}  </span>
+                <span className="text-2xl font-semibold  mr-auto  ml-4"> {title}  </span>
             </div>
 
 
