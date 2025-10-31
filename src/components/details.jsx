@@ -2,6 +2,8 @@ import DetailsBoxList from "./detailsBoxList";
 import ContainBtn from "./containBtn"
 import { BsSearchHeartFill } from "react-icons/bs";
 
+import { Link } from "react-router-dom";
+
 
 export default function Details() {
     return (
@@ -28,10 +30,12 @@ export default function Details() {
                 <p className="text-2xl my-8  pb-4" >Join thousands of students who have already transformed their academic <br />  workflow with our tools.</p>
 
 
+                <Link to={"/tools"}>
+                    <div className="flex justify-center">
+                        <ContainBtn label="Start Using Tools Now " Icon={< BsSearchHeartFill />} />
+                    </div>
+                </Link>
 
-                <div className="flex justify-center">
-                    <ContainBtn label="Start Using Tools Now " Icon={< BsSearchHeartFill />} />
-                </div>
 
             </div>
 

@@ -3,6 +3,9 @@ import DisableBtn from './disableBtn';
 import { RiCameraLensFill } from "react-icons/ri";
 import { MdGeneratingTokens } from "react-icons/md";
 
+import { Link } from "react-router-dom";
+
+
 
 export default function ToolsSec() {
     return (
@@ -18,9 +21,13 @@ export default function ToolsSec() {
                 <ToolCardList />
             </div>
 
-            <div className='flex justify-center '>
-                <DisableBtn label="View All 15 Tools  " Icon={<RiCameraLensFill />} className="flex  justify-center " />
-            </div>
+
+            <Link to={"/tools"}>
+                <div className='flex justify-center '>
+                    <DisableBtn label="View All 15 Tools  " Icon={<RiCameraLensFill />} className="flex  justify-center " />
+                </div>
+            </Link>
+
         </section>
 
     );
