@@ -1,11 +1,12 @@
 import DetailsBoxList from "./detailsBoxList";
 import ContainBtn from "./containBtn"
-import { LuSparkles } from "react-icons/lu";
+import { BsSearchHeartFill } from "react-icons/bs";
+
 
 export default function Details() {
     return (
 
-        <section className="w-full  Bg-Color  h-278  text-center  pt-3">
+        <section className="w-full  bg-t  h-278  text-center  pt-3">
 
 
             <div>
@@ -28,10 +29,10 @@ export default function Details() {
 
 
 
-                
-                    <ContainBtn label="Start Using Tools Now " />
-                    
-                
+                <div className="flex justify-center">
+                    <ContainBtn label="Start Using Tools Now " Icon={< BsSearchHeartFill />} />
+                </div>
+
             </div>
 
 

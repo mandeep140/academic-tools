@@ -9,7 +9,7 @@ import DisableBtn from "./disableBtn"
 // icons
 import { FaEnvelopeOpenText } from "react-icons/fa6";
 import { MdPhotoLibrary } from "react-icons/md";
-import { BsSearchHeartFill } from "react-icons/bs";                                                                                                         
+import { BsSearchHeartFill } from "react-icons/bs";
 import { FaCheckToSlot } from "react-icons/fa6";
 import { SiUnderarmour } from "react-icons/si";
 import { BsFillFileEarmarkPdfFill } from "react-icons/bs";
@@ -51,7 +51,7 @@ export default function ToolKitList() {
 
 
 
-        <div className="Bg-Color  py-16">
+        <div className="bg-two  py-16">
 
             <span className="text-2xl font-medium ml-16  underline underline-offset-2  font-p  ">Showing  &nbsp; 15  of  15  &nbsp; Tools</span>
 
@@ -65,10 +65,18 @@ export default function ToolKitList() {
                 </Link>
 
 
+                <Link to={"/imageCompressor"}>
+                    <ToolKit bgcolor="bg-linear-to-t from-sky-300 to-pink-400" title="Image Compressor & Resizer" para="Compress and resize images efficiently" tags="File Management" icon={< MdPhotoLibrary />} />
+                </Link>
 
 
-                <ToolKit bgcolor="bg-linear-to-t from-sky-300 to-pink-400" title="Image Compressor & Resizer" para="Compress and resize images efficiently" tags="File Management" icon={< MdPhotoLibrary />} />
-                <ToolKit bgcolor="bg-linear-to-t from-sky-200 to-blue-500" title="Plagiarism Checker" para="Check text for plagiarism and originality" tags="Writing Tools" icon={<BsSearchHeartFill />} />
+                <Link to={"/pdftools"}>
+                    <ToolKit bgcolor="bg-linear-to-t from-sky-200 to-blue-500" title="Plagiarism Checker" para="Check text for plagiarism and originality" tags="Writing Tools" icon={<BsSearchHeartFill />} />
+                </Link>
+
+
+
+
                 <ToolKit bgcolor="bg-linear-to-t from-pink-200 to-pink-700" title="Grammar & Spell Checker" para="Check and correct grammar and spelling errors" tags="Writing Tools" icon={< FaCheckToSlot />} />
                 <ToolKit bgcolor=" bg-linear-to-t from-yellow-200 to-pink-700     " title="Citation & Reference Generator" para="Generate APA, MLA, and IEEE citations" tags="Writing Tools" icon={<SiUnderarmour />} />
                 <ToolKit bgcolor="  bg-linear-to-t from-pink-300 to-purple-700 " title="PDF Tools" para="Merge, split, protect, and annotate PDFs" tags="File Management" icon={< BsFillFileEarmarkPdfFill />} />
@@ -92,7 +100,11 @@ export default function ToolKitList() {
             <div className=" h-76  w-3/4  mx-auto  text-center rounded-2xl  shadow-xl/20  py-12  mt-20 ">
                 <h3 className=" text-4xl  my-8  font-p">Need a specific tool?</h3>
                 <p className="text-xl  pb-12">Can't find what you're looking for? We're constantly adding new tools based on user feedback.</p>
-                <DisableBtn label="Contact Us" />
+                
+                <div className="flex justify-center">
+<DisableBtn label="Contact Us" />
+                </div>
+                
             </div>
 
         </div >

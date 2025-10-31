@@ -11,6 +11,9 @@ import { FaLightbulb } from "react-icons/fa6";
 import { GiArchiveResearch } from "react-icons/gi";
 
 
+
+import { IoIosMail } from "react-icons/io";
+import { VscGithub } from "react-icons/vsc";
 import { BsFillSuitHeartFill } from "react-icons/bs";
 
 export default function AboutOffers() {
@@ -47,7 +50,7 @@ export default function AboutOffers() {
 
 
 
-        <div className=" Bg-Color ">
+        <div className="  ">
 
             <div className="  flex flex-col items-center py-16 px-4  ">
 
@@ -126,9 +129,9 @@ export default function AboutOffers() {
                     <p className="text-2xl">Have questions, suggestions, or feedback? We'd love to hear from you. Your input  <br /> helps us build better tools for the academic community.</p>
                     
                     
-                    <div>
-                        <ContainBtn label="Contact Support " />  &nbsp; &nbsp;
-                        <DisableBtn label="Feature Request " />
+                    <div className="flex justify-center pb-4">
+                        <ContainBtn label="Contact Support " Icon={<IoIosMail/>}/>  &nbsp; &nbsp;
+                        <DisableBtn label="Feature Request " Icon={< VscGithub />}/>
                     </div>
 
                 </div>

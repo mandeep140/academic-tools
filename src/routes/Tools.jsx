@@ -6,12 +6,10 @@ import ToolKitList from '../components/ToolKitList'
 const Tools = () => {
     return (
         <>
-
-            <ToolInput />
-
-            <ToolKitList />
-
-
+            <div className=''>
+                <ToolInput />
+                <ToolKitList />
+            </div>
 
         </>
     )

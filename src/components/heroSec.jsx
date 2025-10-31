@@ -9,13 +9,13 @@ import SBoxesList from './SBoxesList'
 
 export default function HeroSec() {
     return (
-        <section className="w-full Bg-Color  h-228  py-20 px-20   text-center ">
+        <section className="w-full   h-228  py-20 px-20   text-center  bg-img ">
 
 
 
             
                 
-                <span  className="rounded-3xl bg-white mt-24  mb-8   w-76  mx-auto  flex  text-center  px-6  py-1.5  font-medium" > 
+                <span  className="rounded-3xl bg-white mt-24  mb-8   w-74  mx-auto  flex  text-center  px-5  py-1.5  font-medium" > 
                     < LuSparkles className=" txtColor-Org  text-xl"/>  &nbsp;  &nbsp;  15 Academic Tools & Growing </span>
             
 
@@ -30,8 +30,8 @@ export default function HeroSec() {
                 <span className=" text-amber-500 font-semibold"> AI-powered</span>   tools designed specifically for students and researchers.
             </p>
 
-            <div className="mb-16">
-                <ContainBtn label="Explore All Tools -> " />   &nbsp;  &nbsp;
+            <div className="mb-16  flex justify-center ">
+                <ContainBtn label= { `Explore All Tools   `}  Icon={<LuSparkles/>} />   &nbsp;  &nbsp;
                 <DisableBtn label="Learn More " />
             </div>
 

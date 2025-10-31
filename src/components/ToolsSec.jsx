@@ -1,7 +1,7 @@
 import ToolCardList from './toolCardList'
 import DisableBtn from './disableBtn';
 import { RiCameraLensFill } from "react-icons/ri";
-
+import { MdGeneratingTokens } from "react-icons/md";
 
 
 export default function ToolsSec() {
@@ -18,8 +18,9 @@ export default function ToolsSec() {
                 <ToolCardList />
             </div>
 
-            <DisableBtn label="View All 15 Tools  "  />
-
+            <div className='flex justify-center '>
+                <DisableBtn label="View All 15 Tools  " Icon={<RiCameraLensFill />} className="flex  justify-center " />
+            </div>
         </section>
 
     );

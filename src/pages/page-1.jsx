@@ -15,20 +15,22 @@ export default function FileConverter() {
 
     return (
 
-        <div className="   ">
+        <div className="   text-center ">
+
+            <h2 className=" pt-28  pb-3 mx-auto" >File Converter</h2>
+            <p className="">Convert between different file formats including PDF, Word, Excel, PowerPoint, and image formats.</p>
 
             <div className=" bg-fuchsia-400   flex flex-wrap justify-center  items-center p-12 " >
 
-            <h2 className="pt-20  mx-auto" >File Converter</h2>
-            <p className="">Convert between different file formats including PDF, Word, Excel, PowerPoint, and image formats.</p>
 
 
 
-                <div className="grid lg:grid-cols-2  gap-8 w-full max-w-6xl  mt-40">
+
+                <div className="grid lg:grid-cols-2  gap-8   justify-center items-center ">
 
 
                     {/* /// */}
-                    <div className="bg-yellow-200 rounded-xl shadow-lg   p-8">
+                    <div className="bg-yellow-200 rounded-xl shadow-lg   p-8  px-16">
 
                         <h2 className="font-semibold text-lg flex items-center gap-2">
                             Upload & Convert
@@ -79,11 +81,11 @@ export default function FileConverter() {
 
 
                     {/*     */}
-                    <div className=" space-y-6  bg-amber-800">
+                    <div className=" space-y-6  bg-amber-800  w-68">
 
 
                         <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-                            <h3 className="font-bold text-gray-800 mb-4">Supported Formats</h3>
+                            <h3 className="font-bold  mb-4">Supported Formats</h3>
 
                             <div>
                                 <p className="font-medium">Documents</p>
