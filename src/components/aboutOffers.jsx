@@ -19,7 +19,7 @@ import { BsFillSuitHeartFill } from "react-icons/bs";
 export default function AboutOffers() {
     const offers = [
         {
-            icon: < ImBooks/>,
+            icon: < ImBooks />,
             bgColor: "bg-gradient-to-r from-blue-500 to-blue-600",
             title: "File Management",
             desc: "Convert, compress, and manage your academic files with ease. Support for all major formats.",
@@ -33,7 +33,7 @@ export default function AboutOffers() {
             tags: ["Grammar Checker", "Citations", "Plagiarism"],
         },
         {
-            icon: <FaLightbulb  />,
+            icon: <FaLightbulb />,
             bgColor: "bg-gradient-to-r from-purple-500 to-purple-600",
             title: "Study & Productivity",
             desc: "Organize your studies with flashcards, mind maps, and task management tools.",
@@ -114,7 +114,7 @@ export default function AboutOffers() {
 
 
                 <div className=" bg-white  h-100 w-100  shadow-md  rounded-2xl  mb-8 mx-auto  pt-8  ">
-                    <div className="h-24  w-24  rounded-full bg-[#f9b94e]  text-white  mx-auto text-5xl grid place-items-center">   <  HiUserGroup/> </div>
+                    <div className="h-24  w-24  rounded-full bg-[#f9b94e]  text-white  mx-auto text-5xl grid place-items-center">   <  HiUserGroup /> </div>
                     <h3 className="text-3xl  py-8  font-p ">Academic Tools Team</h3>
                     <p className="text-xl  text-green-700 ">Development & Design</p>
                     <p className="pt-8  text-xl">Passionate about creating tools that enhance learning and productivity for <br /> students worldwide.</p>
@@ -124,20 +124,24 @@ export default function AboutOffers() {
 
 
                 <div className="h-104 w-3/4  py-4 mx-auto my-20 rounded-2xl  shadow-xl/20   grid  place-items-center">
-                    <div className="rounded-2xl  txtColor-Org   text-8xl  p-2" >  <IoMailUnreadSharp/> </div>
+                    <div className="rounded-2xl  txtColor-Org   text-8xl  p-2" >  <IoMailUnreadSharp /> </div>
                     <h3 className="text-4xl  "> Get in Touch </h3>
                     <p className="text-2xl">Have questions, suggestions, or feedback? We'd love to hear from you. Your input  <br /> helps us build better tools for the academic community.</p>
-                    
-                    
+
+
                     <div className="flex justify-center pb-4">
-                        <ContainBtn label="Contact Support " Icon={<IoIosMail/>}/>  &nbsp; &nbsp;
-                        <DisableBtn label="Feature Request " Icon={< VscGithub />}/>
+                        <ContainBtn label="Contact Support " Icon={<IoIosMail  className="text-3xl" />} />  &nbsp; &nbsp;
+                        <DisableBtn label="Feature Request " Icon={< VscGithub  className="text-2xl"  />} />
                     </div>
 
                 </div>
 
 
-                <p className="text-lg">Built by learners, for learners   <br />because academic life deserves better tools!</p>
+
+                <BsFillSuitHeartFill className="mx-auto text-red-600  text-xl " />
+                <p className="text-md">Built by learners, for learners   <br />because academic life deserves better tools!</p>
+
+
 
             </div>
 

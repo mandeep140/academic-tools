@@ -36,22 +36,12 @@ import { FaFilePen } from "react-icons/fa6";
 
 
 
-
-
-
-
-
-
-
-
-
-
 export default function ToolKitList() {
     return (
 
 
 
-        <div className="bg-two  py-16">
+        <div className="  py-16">
 
             <span className="text-2xl font-medium ml-16  underline underline-offset-2  font-p  ">Showing  &nbsp; 15  of  15  &nbsp; Tools</span>
 
@@ -74,6 +64,40 @@ export default function ToolKitList() {
                     <ToolKit bgcolor="bg-linear-to-t from-sky-200 to-blue-500" title="Plagiarism Checker" para="Check text for plagiarism and originality" tags="Writing Tools" icon={<BsSearchHeartFill />} />
                 </Link>
 
+                <Link to={"/imageEditor"}>
+                    <ToolKit bgcolor="  bg-linear-to-t from-pink-100 to-pink-900   " title="Image Editor" para="Advanced image editing with filters and effects" tags="Image Tools" icon={< LuListTodo />} />
+                </Link>
+
+
+
+
+                <Link to={"/excelFile"}>
+                    <ToolKit bgcolor="  bg-linear-to-t from-pink-300 to-yellow-700   " title="Excel File Read / Write" para="Read and write Excel files with ease" tags="File Conversion" icon={<RiBrainFill />} />
+                </Link>
+
+                <Link to={"/CropAndEdit"}>
+                    <ToolKit bgcolor="  bg-linear-to-t from-sky-100 to-sky-800   " title="Crop / Edit" para="Crop and edit images with precision" tags="Image Tools" icon={<RiMindMap />} />
+                </Link>
+
+                <Link to={"/ImageFormatConverter "}>
+                    <ToolKit bgcolor="  bg-linear-to-t from-pink-200 to-maroon-800   " title="Format Convert (JPG↔PNG↔WebP) " para="Convert between JPG, PNG, and WebP formats" tags="Image Tools" icon={<RiCurrencyFill />} />
+                </Link>
+
+                <Link to={"/BgRemoval"}>
+
+                    <ToolKit bgcolor="  bg-linear-to-t from-red-100 to-purple-800   " title=" Background Removal (AI, local)" para="Remove image backgrounds using AI locally" tags=" Image Tools " icon={<SiDictionarydotcom />} />
+                </Link>
+
+                <Link to={"/PdfRenderAndView"}>
+                    <ToolKit bgcolor=" bg-linear-to-t from-blue-400 to-pink-600     " title="PDF Render / View" para=" View and render PDF files in your browser" tags="PDF Tools" icon={< GiThermometerScale />} />
+                </Link>
+
+
+
+                <Link to={"/DocsToHtml"}>
+                    <ToolKit bgcolor="  bg-linear-to-t from-red-400 to-purple-800   " title="DOCX ↔ PDF / HTML" para="Convert DOCX to PDF or HTML and vice versa" tags="File Conversion " icon={<GiNotebook />} />
+                </Link>
+
 
 
 
@@ -82,13 +106,8 @@ export default function ToolKitList() {
                 <ToolKit bgcolor="  bg-linear-to-t from-pink-300 to-purple-700 " title="PDF Tools" para="Merge, split, protect, and annotate PDFs" tags="File Management" icon={< BsFillFileEarmarkPdfFill />} />
                 <ToolKit bgcolor="bg-linear-to-t from-pink-400 to-purple-700" title="Code Formatter & Beautifier" para="Format and beautify code in multiple languages" tags="Development" icon={<FaFileCode />} />
                 <ToolKit bgcolor=" bg-linear-to-t from-green-300 to-purple-500  " title="Math Equation Solver" para="Solve mathematical equations step-by-step" tags="Academic" icon={< ImCalculator />} />
-                <ToolKit bgcolor=" bg-linear-to-t from-blue-400 to-pink-600     " title="Unit Converter" para="Convert between different units of measurement" tags="Utilities" icon={< GiThermometerScale />} />
-                <ToolKit bgcolor="  bg-linear-to-t from-red-100 to-purple-800   " title="Dictionary & Thesaurus" para="Look up definitions and synonyms" tags="  Reference" icon={<SiDictionarydotcom />} />
-                <ToolKit bgcolor="  bg-linear-to-t from-pink-200 to-maroon-800   " title="Currency Converter" para="Convert between different currencies with real-time rates" tags="Utilities" icon={<RiCurrencyFill />} />
-                <ToolKit bgcolor="  bg-linear-to-t from-sky-100 to-sky-800   " title="Mind Map & Flowchart Generator" para="Create visual mind maps and flowcharts" tags="Academic" icon={<RiMindMap />} />
-                <ToolKit bgcolor="  bg-linear-to-t from-pink-100 to-pink-900   " title="To-Do List & Task Manager" para="Organize tasks with due dates and progress tracking" tags="Productivity" icon={< LuListTodo />} />
-                <ToolKit bgcolor="  bg-linear-to-t from-red-400 to-purple-800   " title="Notes Summarizer" para="Generate concise summaries from your notes" tags="Study Tools" icon={<GiNotebook />} />
-                <ToolKit bgcolor="  bg-linear-to-t from-pink-300 to-yellow-700   " title="Flashcards & Quiz Generator" para="Create and study with digital flashcards" tags="Study Tools" icon={<RiBrainFill />} />
+
+
 
             </div>
 
@@ -100,11 +119,11 @@ export default function ToolKitList() {
             <div className=" h-76  w-3/4  mx-auto  text-center rounded-2xl  shadow-xl/20  py-12  mt-20 ">
                 <h3 className=" text-4xl  my-8  font-p">Need a specific tool?</h3>
                 <p className="text-xl  pb-12">Can't find what you're looking for? We're constantly adding new tools based on user feedback.</p>
-                
+
                 <div className="flex justify-center">
-<DisableBtn label="Contact Us" />
+                    <DisableBtn label="Contact Us" />
                 </div>
-                
+
             </div>
 
         </div >

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export default function Footer() {
     return (
 
-        <div className="text-center  p-8  ">
-            <p className="text-lg mb-4">© 2024 Academic Tools. Built to make student productivity faster, easier, and smarter.</p>
+        <div className="text-center  p-8 shadow-lg ">
+            <p className="text-lg mb-4">© 2025 Academic Tools. Built to make student productivity faster, easier, and smarter.</p>
 
             
                 <Link to={"/about"}> <Btns label=" About " />  </Link>

@@ -7,9 +7,17 @@ import Home from './routes/home';
 import Tools from './routes/Tools';
 import About from './routes/About';
 
-import FileConverter from './routes/file-ConverterTool'
+
 import ImgCompressor from './pages/page-2'
 import PdfTools from './pages/page-3';
+import ExcelFile from './pages/page-4';
+import ImageEditor from './pages/page-5';
+
+import CropAndEdit from './pages/page-6';
+import ImageFormatConverter from './pages/page-7';
+import BackgroundRemoval from './pages/page-8';
+import PDFRenderAndView from './pages/page-9';
+import DocsToHtml from './pages/page-10';
 
 import Footer from './components/footer'
 
@@ -28,10 +36,18 @@ const App = () => {
         <Route path='/about' element={<About />} />
         <Route path='/tools' element={<Tools />} />
 
-        <Route path='/fileConverter' element={<FileConverter />} />
+
         <Route path='/ImageCompressor' element={<ImgCompressor />} ></Route>
 
         <Route path='/pdftools' element={<PdfTools />} />
+        <Route path='/excelFile' element={<ExcelFile />} />
+        <Route path='/imageEditor' element={<ImageEditor />} />
+
+        <Route path='/CropAndEdit' element={< CropAndEdit />} />
+        <Route path='/ImageFormatConverter ' element={< ImageFormatConverter />} />
+        <Route path='/BgRemoval' element={< BackgroundRemoval />} />
+        <Route path='/PdfRenderAndView' element={< PDFRenderAndView />} />
+        <Route path='/DocsToHtml' element={< DocsToHtml />} />
 
       </Routes>
 
@@ -39,7 +55,7 @@ const App = () => {
       <Footer />
 
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -11,7 +11,7 @@ export default function ToolInput() {
 
 
 
-            <div className=" Bg-Color  pt-28 text-center  ">
+            <div className="   pt-28 text-center  ">
                 <h3 className="text-5xl  py-8  font-p "> Explore Tools </h3>
                 <p className="text-xl   "> Discover our comprehensive collection of academic tools designed to enhance your <br /> productivity and learning experience. </p>
 
@@ -25,14 +25,9 @@ export default function ToolInput() {
 
                 <div >
                     <DesignBtn label="All Tools" />
-                    <DesignBtn label="File Management" />
-                    <DesignBtn label="Writing Tools" />
-                    <DesignBtn label="Academic" />
-                    <DesignBtn label="Study Tools" />
-                    <DesignBtn label="Productivity" />
-                    <DesignBtn label="Utilities" />
-                    <DesignBtn label="Development" />
-                    <DesignBtn label="Reference" />
+                    <DesignBtn label="PDF Tools" />
+                    <DesignBtn label="Image Tools" />
+                    <DesignBtn label="File Conversion" />
                 </div>
 
 
