@@ -1,5 +1,7 @@
 import DisableBtn from "../components/disableBtn"
-import { FaUpload } from "react-icons/fa";
+import ContainBtn from "../components/containBtn"
+import { MdOutlineUpload } from "react-icons/md";
+
 import { IoColorPaletteOutline } from "react-icons/io5";
 
 export default function ImageEditor() {
@@ -13,19 +15,22 @@ export default function ImageEditor() {
 
             <div className="flex  gap-12  justify-center    " >
 
-                <div className="p-4  h-44  w-1/5 rounded-2xl  shadow-xl" >
-                    <h3 className=" font-semibold text-gray-800 text-lg ">Editor</h3>
+                <div className="p-4  h-44  w-1/5 rounded-2xl  shadow-xl bg-lime-100 " >
+                    <h3 className=" font-semibold text-gray-800 text-xl ">Editor</h3>
                     <p className="m-3">Adjustments & Filters</p>
-                    <DisableBtn label="Upload Image" />
+                    
+                    <div className="flex justify-center mt-4">  <ContainBtn Icon={<MdOutlineUpload  className="text-2xl"/>} label="Upload Image"  /> 
+                    </div>
+                    
                 </div>
 
                 {/* 2 */}
-                <div className="p-4    w-1/2  rounded-2xl  shadow-2xl  mb-24">
-                    <h3 className="font-semibold text-gray-800 text-2xl bold p-2">Preview</h3>
+                <div className="p-6    w-1/2  rounded-2xl  shadow-2xl  mb-24 bg-green-100  ">
+                    <h3 className="font-semibold text-gray-800 text-3xl bold p-2">Preview</h3>
                     <p>Upload an image to start editing</p>
 
                     <div
-                        className="border-2 border-dashed border-yellow-100 rounded-xl p-12 mt-8 pb-24
+                        className="  border-2 border-dashed border-yellow-100 rounded-xl p-12 mt-8 pb-24
                         flex flex-col items-center justify-center text-center hover:border-yellow-500 transition"
                     >
                         <div className=" text-6xl  text-yellow-600"> <IoColorPaletteOutline /></div>

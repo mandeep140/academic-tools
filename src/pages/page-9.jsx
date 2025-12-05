@@ -1,5 +1,6 @@
-import DisableBtn from "../components/disableBtn";
+import ContainBtn from "../components/ContainBtn";
 import { FaFilePdf } from "react-icons/fa6";
+import { FaUpload } from "react-icons/fa6";
 
 export default function PDFRenderAndView() {
     return (
@@ -9,15 +10,15 @@ export default function PDFRenderAndView() {
 
             <div className="flex gap-12  justify-center">
                 {/* 1 */}
-                <div className="rounded-2xl  shadow-xl p-8  text-center h-54">
+                <div className="rounded-2xl  shadow-xl p-8  text-center h-54 bg-lime-50">
                     <h3 className="font-semibold text-gray-800 text-lg  p-3"> Controls</h3>
                     <p className="pb-8">Upload and manage your PDF</p>
-                    <DisableBtn label={"Upload PDF"}  />
+                    < ContainBtn  label={"Upload PDF"} Icon={<FaUpload />} />
 
                 </div>
 
                 {/* 2 */}
-                <div className="rounded-2xl  shadow-xl p-8  w-1/2">
+                <div className="rounded-2xl  shadow-xl p-8  w-1/2  bg-green-100">
                     <div
                         className="border-2 border-dashed border-yellow-100 rounded-xl p-12 mt-8 pb-16 py-30
                         flex flex-col items-center justify-center text-center hover:border-yellow-500 transition"

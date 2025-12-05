@@ -17,9 +17,9 @@ export default function ToolCardList() {
 
             <ToolCard title="File Converter" para="Convert between PDF, Word, Excel, PPT, and Images" icon={<DescriptionOutlinedIcon      />} />
             <ToolCard title="Image Compressor" para="Compress and resize images efficiently" icon={<CollectionsOutlinedIcon    />} />
-            <ToolCard title="Plagiarism Checker" para="Check text for plagiarism and originality" icon={<SearchOutlinedIcon    />} />
-            <ToolCard title="Grammar Checker" para="Check and correct grammar and spelling errors" icon={<TaskAltOutlinedIcon    />} />
-            <ToolCard title="Citation Generator" para="Generate APA, MLA, and IEEE citations" icon={<GeneratingTokensOutlinedIcon    />} />
+            <ToolCard title="Crop / Edit" para="Crop and edit images with precision" icon={<SearchOutlinedIcon    />} />
+            <ToolCard title="DOCX ↔ PDF / HTML" para="Convert DOCX to PDF or HTML and vice versa" icon={<TaskAltOutlinedIcon    />} />
+            <ToolCard title="Background Removal " para="Remove image backgrounds using AI locally" icon={<GeneratingTokensOutlinedIcon    />} />
             <ToolCard title="PDF Tools" para="Merge, split, protect, and compress PDFs" icon={<PictureAsPdfOutlinedIcon    />} />
 
         </div >

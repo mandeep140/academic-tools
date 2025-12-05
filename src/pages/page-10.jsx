@@ -1,27 +1,36 @@
+import { FaFileInvoice } from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
+
+import { PiFilesFill } from "react-icons/pi";
+import { SiTicktick } from "react-icons/si";
+import { GiCardExchange } from "react-icons/gi";
+import { FaUpload } from "react-icons/fa6";
+
+
 export default function DocsToHtml() {
 
     const DocxBox = [
 
         {
-            icon: " $$",
+            icon: <FaFileInvoice />,
             value: "DOCX → PDF",
             label: "Convert DOCX files to PDF format",
         },
 
         {
-            icon: "",
+            icon: <FaCode />,
             value: "DOCX → HTML",
             label: " Convert DOCX  files to HTML format",
         },
 
         {
-            icon: "",
+            icon: <FaFileInvoice />,
             value: "PDF → DOCX",
             label: " Convert PDF  to DOCX",
         },
 
         {
-            icon: "",
+            icon: <FaCode />,
             value: "HTML → DOCX",
             label: " Convert HTML to DOCX",
         },
@@ -35,19 +44,19 @@ export default function DocsToHtml() {
     const Card = [
 
         {
-            icon: " $$",
+            icon: <PiFilesFill/>,
             value: "Preserve Formatting",
             label: "Keep your document style",
         },
 
         {
-            icon: "%%",
+            icon: <SiTicktick/>,
             value: "High Quality",
             label: "Professional output ",
         },
 
         {
-            icon: "%%",
+            icon: <GiCardExchange/>,
             value: "Fast Conversion",
             label: "Process in seconds ",
         },
@@ -75,7 +84,7 @@ export default function DocsToHtml() {
                         >
 
 
-                            <div className="bg-amber-500  p-4 px-6 "> {item.icon} </div>
+                            <div className="bg-amber-500   p-4 px-6  text-3xl  "> {item.icon} </div>
 
                             <div>
                                 <h3>{item.value} </h3>
@@ -97,8 +106,8 @@ export default function DocsToHtml() {
                         className="border-2 border-dashed border-yellow-100 rounded-xl p-12  mb-4
                         flex flex-col items-center justify-center text-center hover:border-yellow-500 transition"
                     >
-                        <div className="text-6xl  text-yellow-600"> %% </div>
-                        <h3 className="font-semibold text-gray-800 text-lg p-2 pt-4"> Click to upload DOCX file</h3>
+                        <div className="text-6xl  text-yellow-600"> <FaUpload/> </div>
+                        <h3 className="font-semibold text-gray-800 text-lg p-2 pt-6"> Click to upload DOCX file</h3>
                         <p className="text-sm"> Supported format: DOCX </p>
                     </div>
                 </div>
@@ -115,30 +124,14 @@ export default function DocsToHtml() {
                             className="bg-red-300  rounded-2xl  shadow-2xl  p-12  px-20 hover:border-yellow-500  hover:border-2 transition hover:scale-105 "
                         >
 
-                            <div className="bg-yellow-500  text-4xl    p-3  rounded-2xl">{item.icon} </div>
+                            <div className="bg-yellow-500  text-4xl  flex justify-center  p-3 w-20 rounded-2xl">{item.icon} </div>
 
                             <div>
                                 <h3 className="text-lg  p-2">{item.value} </h3>
                                 <p>{item.label}</p>
                             </div>
 
-
-
-
-
-
-
-
-
-
-
                         </div>
-
-
-
-
-
-
 
 
                     ))};
@@ -146,35 +139,7 @@ export default function DocsToHtml() {
                 </div>
 
 
-
-
-
-
-
-
-
-
-
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
     );

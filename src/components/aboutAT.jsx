@@ -95,7 +95,7 @@ export default function AboutAT() {
 
     return (
 
-        <div className=' Bg-Color '>
+        <div className='  '>
 
 
 
@@ -126,12 +126,6 @@ export default function AboutAT() {
 
 
 
-
-
-
-
-
-
             {/* small boxes */}
 
 
@@ -158,15 +152,6 @@ export default function AboutAT() {
                 </div>
 
             </div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -209,27 +194,6 @@ export default function AboutAT() {
                 </div>
 
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         </div>

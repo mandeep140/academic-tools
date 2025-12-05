@@ -147,15 +147,7 @@ export default function AboutOffers() {
 
 
 
-
-
-
-
         </div>
-
-
-
-
 
 
 

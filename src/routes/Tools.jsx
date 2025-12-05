@@ -6,7 +6,7 @@ import ToolKitList from '../components/ToolKitList'
 const Tools = () => {
     return (
         <>
-            <div className="bg-gradient-to-br from-green-100 to-emerald-100">
+            <div className=" bg-linear-to-r/decreasing from-sky-100 to-teal-300">
                 <ToolInput />
                 <ToolKitList />
             </div>

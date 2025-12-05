@@ -11,12 +11,10 @@ import AboutOffers from '../components/aboutOffers'
 const About = () => {
     return (
         <>
-
-            <AboutAT />
-
-            <AboutOffers />
-
-
+            <div className=" bg-linear-to-r/decreasing from-lime-100 to-teal-200">
+                <AboutAT />
+                <AboutOffers />
+            </div>
 
 
 

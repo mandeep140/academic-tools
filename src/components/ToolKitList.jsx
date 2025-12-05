@@ -61,7 +61,7 @@ export default function ToolKitList() {
 
 
                 <Link to={"/pdftools"}>
-                    <ToolKit bgcolor="bg-linear-to-t from-sky-200 to-blue-500" title="Plagiarism Checker" para="Check text for plagiarism and originality" tags="Writing Tools" icon={<BsSearchHeartFill />} />
+                    <ToolKit bgcolor="  bg-linear-to-t from-pink-300 to-purple-700 " title="PDF Tools" para="Merge, split, protect, and annotate PDFs" tags="File Management" icon={< BsFillFileEarmarkPdfFill />} />
                 </Link>
 
                 <Link to={"/imageEditor"}>
@@ -103,7 +103,7 @@ export default function ToolKitList() {
 
                 <ToolKit bgcolor="bg-linear-to-t from-pink-200 to-pink-700" title="Grammar & Spell Checker" para="Check and correct grammar and spelling errors" tags="Writing Tools" icon={< FaCheckToSlot />} />
                 <ToolKit bgcolor=" bg-linear-to-t from-yellow-200 to-pink-700     " title="Citation & Reference Generator" para="Generate APA, MLA, and IEEE citations" tags="Writing Tools" icon={<SiUnderarmour />} />
-                <ToolKit bgcolor="  bg-linear-to-t from-pink-300 to-purple-700 " title="PDF Tools" para="Merge, split, protect, and annotate PDFs" tags="File Management" icon={< BsFillFileEarmarkPdfFill />} />
+
                 <ToolKit bgcolor="bg-linear-to-t from-pink-400 to-purple-700" title="Code Formatter & Beautifier" para="Format and beautify code in multiple languages" tags="Development" icon={<FaFileCode />} />
                 <ToolKit bgcolor=" bg-linear-to-t from-green-300 to-purple-500  " title="Math Equation Solver" para="Solve mathematical equations step-by-step" tags="Academic" icon={< ImCalculator />} />
 

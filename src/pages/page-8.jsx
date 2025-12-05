@@ -36,11 +36,11 @@ export default function BackgroundRemoval() {
 
 
     return (
-        <div className="bg-two  pt-36 text-center  pb-24" >
+        <div className="bg-two  pt-36 text-center  pb-24 " >
             <h2>Background Removal</h2>
             <p className="text-xl p-3">Remove image backgrounds instantly using AI - all processing done locally in your browser</p>
 
-            <div className="bg-amber-200 w-2/3  mx-auto my-6 p-2  ">
+            <div className=" w-2/3  mx-auto my-6 p-2  bg-green-100  rounded-2xl shadow-xl " >
                 <h3 className="font-semibold text-gray-800 text-2xl p-2 pt-4">AI Background Removal</h3>
                 <p className="text-lg p-2">Upload an image and let AI remove the background automatically</p>
 
@@ -62,11 +62,11 @@ export default function BackgroundRemoval() {
                         {boxes.map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-red-400  rounded-xl  p-6 flex flex-col gap-2  items-center justify-center shadow-lg"
+                                className="bg-lime-100  rounded-xl  p-6 flex flex-col gap-2  items-center justify-center shadow-lg"
                             >
 
 
-                                <div className="text-4xl  ">{item.icon} </div>
+                                <div className="text-4xl txtColor-Org  ">{item.icon} </div>
                                 <div className=" font-semibold text-gray-800 text-lg  mt-4 ">{item.title} </div>
                                 <div className="">{item.desc} </div>
 
