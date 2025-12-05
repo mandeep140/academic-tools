@@ -73,14 +73,6 @@ export default function BackgroundRemoval() {
                             </div>
                         ))}
                     </div>
-
-
-
-
-
-
-
-
                 </div>
 
 
