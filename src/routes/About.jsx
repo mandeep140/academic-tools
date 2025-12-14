@@ -11,7 +11,7 @@ import AboutOffers from '../components/aboutOffers'
 const About = () => {
     return (
         <>
-            <div className=" bg-linear-to-r/decreasing from-lime-100 to-teal-200">
+            <div className=" bg-radial from-[#BDE3D8] to-[#E5EFCE]">
                 <AboutAT />
                 <AboutOffers />
             </div>

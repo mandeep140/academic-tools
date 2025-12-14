@@ -3,7 +3,7 @@ export default function ToolKit({ bgcolor, icon, title, para, tags }) {
 
 
 
-        <div className="bg-[#BAE8C7]  shadow-md  h-82  w-80   rounded-2xl  p-4  pt-6  hover:shadow-xl transition  hover:scale-106  ">
+        <div className="bg-gradient-to-br from-red-100 to-pink-100  shadow-md  h-82  w-80   rounded-2xl  p-4  pt-6  hover:shadow-xl transition  hover:scale-106  ">
 
 
             <div className="flex items-start justify-between">

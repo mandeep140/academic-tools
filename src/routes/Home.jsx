@@ -16,7 +16,7 @@ const Home = () => {
             {/* Hero Section */}
             <section className="w-full min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-8 md:px-12 lg:px-20 text-center bg-img">
                 <span className="rounded-3xl bg-white mt-12 sm:mt-16 md:mt-24 mb-6 sm:mb-8 w-auto max-w-xs mx-auto flex items-center justify-center text-center px-4 sm:px-5 py-1.5 text-sm sm:text-base font-medium">
-                    <LuSparkles className="txtColor-Org text-lg sm:text-xl" />&nbsp;&nbsp;15 Academic Tools & Growing
+                    <LuSparkles className="txtColor-Org text-lg sm:text-xl" />&nbsp;&nbsp;04 Academic Tools & Growing
                 </span>
                 <h1 className="poppins w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium px-4">
                     Academic Tools
@@ -78,7 +78,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className="mt-16 sm:mt-24 md:mt-32 lg:mt-48">
+                <div className="mt-30">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-4">Ready to boost your productivity?</h2>
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl my-4 sm:my-6 md:my-8 pb-4 px-4">
                         Join thousands of students who have already transformed their academic workflow with our tools.

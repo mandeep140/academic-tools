@@ -16,7 +16,7 @@ export default function SBoxesList() {
             <SBoxes title="X+" content="Students Helped" icon={<FaUserGroup/>} />
             <SBoxes title="X+" content="Hours Saved" icon={<BsFillStopwatchFill/>} />
             <SBoxes title="XX" content="User Rating" icon={<RiStarSmileFill/>} />
-            <SBoxes title="15" content="Powerful Tools" icon={<FaBoxes />} />
+            <SBoxes title="04" content="Powerful Tools" icon={<FaBoxes />} />
 
         </div>
 

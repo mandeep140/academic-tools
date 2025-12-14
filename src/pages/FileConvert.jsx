@@ -343,18 +343,18 @@ export default function FileConvert() {
     };
 
     return (
-        <div className="bg-two pt-36 pb-16">
-            <div className="text-center mb-8">
-                <h2>File Converter</h2>
-                <p className="p-3 text-xl pb-8">Convert your files to different formats easily</p>
+        <div className="bg-two pt-24 sm:pt-28 md:pt-36 pb-8 sm:pb-12 md:pb-16 px-4">
+            <div className="text-center mb-6 sm:mb-8">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl">File Converter</h2>
+                <p className="p-2 sm:p-3 text-base sm:text-lg md:text-xl pb-4 sm:pb-6 md:pb-8">Convert your files to different formats easily</p>
             </div>
 
-            <div className="flex gap-8 justify-center px-4">
+            <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8 justify-center max-w-7xl mx-auto">
                 {/* Left Panel - Upload & Options */}
-                <div className="space-y-4 w-96">
+                <div className="space-y-3 sm:space-y-4 w-full lg:w-96">
                     {/* Upload Section */}
-                    <div className="p-6 rounded-2xl shadow-xl bg-lime-100">
-                        <h3 className="font-semibold text-gray-800 text-xl mb-4">Upload File</h3>
+                    <div className="p-4 sm:p-6 rounded-2xl shadow-xl bg-lime-100">
+                        <h3 className="font-semibold text-gray-800 text-lg sm:text-xl mb-3 sm:mb-4">Upload File</h3>
                         
                         <input
                             ref={fileInputRef}
@@ -384,10 +384,10 @@ export default function FileConvert() {
 
                     {/* Category Selection */}
                     {file && (
-                        <div className="p-6 rounded-2xl shadow-xl bg-green-100">
-                            <h3 className="font-semibold text-gray-800 text-xl mb-4">📂 File Type</h3>
+                        <div className="p-4 sm:p-6 rounded-2xl shadow-xl bg-green-100">
+                            <h3 className="font-semibold text-gray-800 text-lg sm:text-xl mb-3 sm:mb-4">📂 File Type</h3>
                             
-                            <div className="grid grid-cols-2 gap-2">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-2">
                                 {Object.keys(conversionOptions).map((category) => (
                                     <button
                                         key={category}
@@ -410,8 +410,8 @@ export default function FileConvert() {
 
                     {/* Conversion Options */}
                     {file && selectedCategory && (
-                        <div className="p-6 rounded-2xl shadow-xl bg-lime-50">
-                            <h3 className="font-semibold text-gray-800 text-lg mb-4">🔄 Convert To</h3>
+                        <div className="p-4 sm:p-6 rounded-2xl shadow-xl bg-lime-50">
+                            <h3 className="font-semibold text-gray-800 text-base sm:text-lg mb-3 sm:mb-4">🔄 Convert To</h3>
                             
                             <div className="space-y-2">
                                 {conversionOptions[selectedCategory].map((option) => (
@@ -436,7 +436,7 @@ export default function FileConvert() {
 
                     {/* Convert Button */}
                     {file && convertTo && (
-                        <div className="p-6 rounded-2xl shadow-xl bg-gradient-to-br from-amber-400 to-orange-500">
+                        <div className="p-4 sm:p-6 rounded-2xl shadow-xl bg-gradient-to-br from-amber-400 to-orange-500">
                             <button
                                 onClick={handleConvert}
                                 disabled={processing}
@@ -466,47 +466,47 @@ export default function FileConvert() {
                 </div>
 
                 {/* Right Panel - Preview/Download */}
-                <div className="p-6 w-2/3 rounded-2xl shadow-2xl bg-green-100">
-                    <h3 className="font-bold text-gray-800 text-3xl p-2">Result</h3>
-                    <p className="mb-4">
+                <div className="p-4 sm:p-6 w-full lg:w-2/3 rounded-2xl shadow-2xl bg-green-100">
+                    <h3 className="font-bold text-gray-800 text-2xl sm:text-3xl p-2">Result</h3>
+                    <p className="mb-3 sm:mb-4 text-sm sm:text-base">
                         {convertedFile ? 'Your file is ready to download' : 'Upload a file and select conversion format'}
                     </p>
 
                     <div className="border-2 border-dashed border-yellow-100 rounded-xl overflow-hidden bg-white/50 relative"
-                         style={{ minHeight: '500px' }}>
+                         style={{ minHeight: '300px' }}>
                         {!file ? (
-                            <div className="flex flex-col items-center justify-center h-full p-12 text-center">
-                                <div className="text-6xl text-yellow-600 mb-4"><IoImageOutline /></div>
-                                <h3 className="p-3">No file selected</h3>
-                                <p className="text-sm">Click "Choose File" to upload a file for conversion</p>
+                            <div className="flex flex-col items-center justify-center h-full p-6 sm:p-12 text-center">
+                                <div className="text-4xl sm:text-5xl md:text-6xl text-yellow-600 mb-3 sm:mb-4"><IoImageOutline /></div>
+                                <h3 className="p-2 sm:p-3 text-lg sm:text-xl md:text-2xl">No file selected</h3>
+                                <p className="text-xs sm:text-sm">Click "Choose File" to upload a file for conversion</p>
                             </div>
                         ) : processing ? (
-                            <div className="flex flex-col items-center justify-center h-full p-12">
-                                <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-amber-500 mb-4"></div>
-                                <p className="text-lg font-semibold text-amber-600">Converting your file...</p>
-                                <p className="text-sm text-gray-600 mt-2">Please wait</p>
+                            <div className="flex flex-col items-center justify-center h-full p-6 sm:p-12">
+                                <div className="animate-spin rounded-full h-12 w-12 sm:h-16 sm:w-16 border-b-4 border-amber-500 mb-3 sm:mb-4"></div>
+                                <p className="text-base sm:text-lg font-semibold text-amber-600">Converting your file...</p>
+                                <p className="text-xs sm:text-sm text-gray-600 mt-2">Please wait</p>
                             </div>
                         ) : convertedFile ? (
-                            <div className="flex flex-col items-center justify-center h-full p-12">
-                                <div className="text-6xl text-green-600 mb-4">✓</div>
-                                <h3 className="p-3 text-2xl font-bold text-green-600">Conversion Successful!</h3>
-                                <p className="text-sm text-gray-600 mb-6">Your file has been converted to {convertTo.toUpperCase()}</p>
+                            <div className="flex flex-col items-center justify-center h-full p-6 sm:p-12">
+                                <div className="text-4xl sm:text-5xl md:text-6xl text-green-600 mb-3 sm:mb-4">✓</div>
+                                <h3 className="p-2 sm:p-3 text-xl sm:text-2xl font-bold text-green-600">Conversion Successful!</h3>
+                                <p className="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-6">Your file has been converted to {convertTo.toUpperCase()}</p>
                                 
                                 <button
                                     onClick={handleDownload}
-                                    className="bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold py-3 px-8 rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg hover:shadow-xl flex items-center gap-3"
+                                    className="bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg hover:shadow-xl flex items-center gap-2 sm:gap-3 text-sm sm:text-base"
                                 >
-                                    <FaDownload className="text-xl" />
+                                    <FaDownload className="text-lg sm:text-xl" />
                                     Download Converted File
                                 </button>
                             </div>
                         ) : (
-                            <div className="flex flex-col items-center justify-center h-full p-12 text-center">
-                                <FaFileAlt className="text-6xl text-amber-500 mb-4" />
-                                <h3 className="p-3">File Ready</h3>
-                                <p className="text-sm text-gray-600">Select a conversion format and click "Convert File"</p>
-                                <div className="mt-4 p-4 bg-white rounded-lg">
-                                    <p className="font-medium">{file.name}</p>
+                            <div className="flex flex-col items-center justify-center h-full p-6 sm:p-12 text-center">
+                                <FaFileAlt className="text-4xl sm:text-5xl md:text-6xl text-amber-500 mb-3 sm:mb-4" />
+                                <h3 className="p-2 sm:p-3 text-lg sm:text-xl md:text-2xl">File Ready</h3>
+                                <p className="text-xs sm:text-sm text-gray-600">Select a conversion format and click "Convert File"</p>
+                                <div className="mt-3 sm:mt-4 p-3 sm:p-4 bg-white rounded-lg">
+                                    <p className="font-medium text-sm sm:text-base">{file.name}</p>
                                     <p className="text-xs text-gray-500 mt-1">{(file.size / 1024).toFixed(2)} KB</p>
                                 </div>
                             </div>

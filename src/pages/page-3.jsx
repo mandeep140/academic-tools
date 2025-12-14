@@ -344,26 +344,26 @@ export default function PdfTools() {
     return (
         <div className="bg-two  pb-16  ">
 
-            <div className="flex flex-col items-center justify-center py-10 px-4  pt-28">
-                <h2 className=" mb-2">PDF Tools </h2>
-                <p className=" mb-8 text-lg"> Merge, split, compress, and protect your PDF files with professional tools. </p>
+            <div className="flex flex-col items-center justify-center py-10 px-4 pt-24 sm:pt-28 md:pt-36">
+                <h2 className="mb-2 text-3xl sm:text-4xl md:text-5xl">PDF Tools</h2>
+                <p className="mb-8 text-base sm:text-lg md:text-xl text-center max-w-2xl">Merge, split, compress, and protect your PDF files with professional tools.</p>
 
 
 
-                <div className="flex   gap-8">
+                <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 w-full max-w-7xl">
 
 
 
                     {/* 1 */}
-                    <div className="flex flex-col  lg:flex-row gap-6  ">
+                    <div className="flex flex-col gap-6 w-full">
 
 
-                        <div className="bg-green-100 p-8 min-h-[78vh] w-3xl shadow-xl rounded-2xl overflow-hidden">
-                            <h3 className="font-medium mb-4 flex items-center gap-2 text-xl">
-                                <span className="text-2xl txtColor-Org"><FaFileAlt /></span> PDF Manager
+                        <div className="bg-green-100 p-4 sm:p-6 md:p-8 min-h-[60vh] lg:min-h-[78vh] w-full lg:w-3xl shadow-xl rounded-2xl overflow-hidden">
+                            <h3 className="font-medium mb-4 flex items-center gap-2 text-lg sm:text-xl">
+                                <span className="text-xl sm:text-2xl txtColor-Org"><FaFileAlt /></span> PDF Manager
                             </h3>
 
-                            <p className="mb-6 text-gray-700">Upload your PDF files and choose from various processing options</p>
+                            <p className="mb-4 sm:mb-6 text-sm sm:text-base text-gray-700">Upload your PDF files and choose from various processing options</p>
 
 
 
@@ -387,18 +387,18 @@ export default function PdfTools() {
 
                                 {selectedFiles.length === 0 ? (
                                     <>
-                                        <div className="text-6xl txtColor-Org mb-3"> <ImUpload2 /> </div>
-                                        <p className="font-medium mb-2">Upload PDF Files</p>
-                                        <p className="m-4">Drag and drop your PDF files here, or click to browse</p>
+                                        <div className="text-4xl sm:text-5xl md:text-6xl txtColor-Org mb-3"> <ImUpload2 /> </div>
+                                        <p className="font-medium mb-2 text-sm sm:text-base">Upload PDF Files</p>
+                                        <p className="m-2 sm:m-4 text-xs sm:text-sm">Drag and drop your PDF files here, or click to browse</p>
 
-                                        <div className="py-4">
+                                        <div className="py-2 sm:py-4">
                                             <ContainBtn 
                                                 label="Choose PDF Files" 
                                                 onClick={handleButtonClick}
                                             />
                                         </div>
 
-                                        <p className="text-sm mt-3 text-gray-600">
+                                        <p className="text-xs sm:text-sm mt-3 text-gray-600">
                                             PDF files up to 500MB • Multiple files supported
                                         </p>
                                     </>
@@ -455,7 +455,7 @@ export default function PdfTools() {
                                     </div>
                                     
                                     <div className="max-h-[45vh] overflow-y-auto pr-2">
-                                        <div className="grid grid-cols-4 gap-4">
+                                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
                                             {pageOrder.map((page, idx) => (
                                                 <div
                                                     key={`${page.fileIndex}-${page.pageNum}-${idx}`}
@@ -478,22 +478,22 @@ export default function PdfTools() {
                                                     </div>
                                                     
                                                     {/* Info overlay */}
-                                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-3 pt-8">
-                                                        <p className="text-white font-bold text-sm mb-0.5">
+                                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-2 sm:p-3 pt-6 sm:pt-8">
+                                                        <p className="text-white font-bold text-xs sm:text-sm mb-0.5">
                                                             Page {page.pageNum}
                                                         </p>
-                                                        <p className="text-gray-200 text-[10px] truncate">
+                                                        <p className="text-gray-200 text-[9px] sm:text-[10px] truncate">
                                                             {pdfPreviews[page.fileIndex]?.fileName}
                                                         </p>
                                                     </div>
                                                     
                                                     {/* Position badge */}
-                                                    <div className="absolute top-2 right-2 bg-gradient-to-br from-amber-400 to-orange-500 text-white text-sm font-bold rounded-lg px-2.5 py-1 shadow-lg">
+                                                    <div className="absolute top-1 sm:top-2 right-1 sm:right-2 bg-gradient-to-br from-amber-400 to-orange-500 text-white text-xs sm:text-sm font-bold rounded-lg px-2 sm:px-2.5 py-0.5 sm:py-1 shadow-lg">
                                                         #{idx + 1}
                                                     </div>
                                                     
                                                     {/* Drag indicator */}
-                                                    <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-gray-700 text-xs font-medium rounded-lg px-2 py-1 shadow">
+                                                    <div className="absolute top-1 sm:top-2 left-1 sm:left-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-gray-700 text-[10px] sm:text-xs font-medium rounded-lg px-1.5 sm:px-2 py-0.5 sm:py-1 shadow">
                                                         ⋮⋮
                                                     </div>
                                                 </div>
@@ -517,55 +517,55 @@ export default function PdfTools() {
 
 
                     {/* 2 */}
-                    <div className="flex flex-col gap-5  ">
+                    <div className="flex flex-col gap-4 sm:gap-5 w-full lg:w-auto">
 
 
                         {/* Available Tools */}
-                        <div className="bg-lime-100 rounded-2xl shadow-lg p-6 w-72">
-                            <h3 className="font-bold mb-4 text-lg">📂 Available Tools</h3>
+                        <div className="bg-lime-100 rounded-2xl shadow-lg p-4 sm:p-6 w-full lg:w-72">
+                            <h3 className="font-bold mb-3 sm:mb-4 text-base sm:text-lg">📂 Available Tools</h3>
 
-                            <div className="space-y-3">
+                            <div className="space-y-2 sm:space-y-3">
                                 <button 
                                     onClick={() => setActiveTool('merge')}
-                                    className={`w-full text-left p-3 rounded-lg transition-all ${
+                                    className={`w-full text-left p-2 sm:p-3 rounded-lg transition-all ${
                                         activeTool === 'merge' ? 'bg-amber-500 text-white shadow-md' : 'bg-white hover:bg-amber-50'
                                     }`}
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <MdCallMerge className="text-2xl" />
+                                    <div className="flex items-center gap-2 sm:gap-3">
+                                        <MdCallMerge className="text-xl sm:text-2xl" />
                                         <div>
-                                            <div className="font-semibold">Merge PDFs</div>
-                                            <div className="text-xs opacity-80">Combine multiple PDFs</div>
+                                            <div className="font-semibold text-sm sm:text-base">Merge PDFs</div>
+                                            <div className="text-[10px] sm:text-xs opacity-80">Combine multiple PDFs</div>
                                         </div>
                                     </div>
                                 </button>
 
                                 <button 
                                     onClick={() => setActiveTool('split')}
-                                    className={`w-full text-left p-3 rounded-lg transition-all ${
+                                    className={`w-full text-left p-2 sm:p-3 rounded-lg transition-all ${
                                         activeTool === 'split' ? 'bg-amber-500 text-white shadow-md' : 'bg-white hover:bg-amber-50'
                                     }`}
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <RiScissorsCutFill className="text-2xl" />
+                                    <div className="flex items-center gap-2 sm:gap-3">
+                                        <RiScissorsCutFill className="text-xl sm:text-2xl" />
                                         <div>
-                                            <div className="font-semibold">Split PDF</div>
-                                            <div className="text-xs opacity-80">Extract specific pages</div>
+                                            <div className="font-semibold text-sm sm:text-base">Split PDF</div>
+                                            <div className="text-[10px] sm:text-xs opacity-80">Extract specific pages</div>
                                         </div>
                                     </div>
                                 </button>
 
                                 <button 
                                     onClick={() => setActiveTool('compress')}
-                                    className={`w-full text-left p-3 rounded-lg transition-all ${
+                                    className={`w-full text-left p-2 sm:p-3 rounded-lg transition-all ${
                                         activeTool === 'compress' ? 'bg-amber-500 text-white shadow-md' : 'bg-white hover:bg-amber-50'
                                     }`}
                                 >
-                                    <div className="flex items-center gap-3">
-                                        <FaCompressAlt className="text-2xl" />
+                                    <div className="flex items-center gap-2 sm:gap-3">
+                                        <FaCompressAlt className="text-xl sm:text-2xl" />
                                         <div>
-                                            <div className="font-semibold">Compress</div>
-                                            <div className="text-xs opacity-80">Reduce file size</div>
+                                            <div className="font-semibold text-sm sm:text-base">Compress</div>
+                                            <div className="text-[10px] sm:text-xs opacity-80">Reduce file size</div>
                                         </div>
                                     </div>
                                 </button>
@@ -574,9 +574,9 @@ export default function PdfTools() {
 
                         {/* Tool Options */}
                         {activeTool === 'split' && (
-                            <div className="bg-white rounded-2xl shadow-lg p-6 w-72">
-                                <h3 className="font-bold mb-4 text-lg">✂️ Split Options</h3>
-                                <label className="block text-sm font-medium mb-2">Page Range</label>
+                            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 w-full lg:w-72">
+                                <h3 className="font-bold mb-3 sm:mb-4 text-base sm:text-lg">✂️ Split Options</h3>
+                                <label className="block text-xs sm:text-sm font-medium mb-2">Page Range</label>
                                 <input
                                     type="text"
                                     placeholder="e.g., 1-3, 5, 7-9"
@@ -592,15 +592,15 @@ export default function PdfTools() {
 
                         {/* Process Button */}
                         {selectedFiles.length > 0 && (
-                            <div className="bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl shadow-lg p-6 w-72">
-                                <h3 className="font-bold mb-4 text-lg text-white">🚀 Ready to Process</h3>
-                                <p className="text-white text-sm mb-4">
+                            <div className="bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl shadow-lg p-4 sm:p-6 w-full lg:w-72">
+                                <h3 className="font-bold mb-3 sm:mb-4 text-base sm:text-lg text-white">🚀 Ready to Process</h3>
+                                <p className="text-white text-xs sm:text-sm mb-3 sm:mb-4">
                                     {selectedFiles.length} file(s) selected
                                 </p>
                                 <button
                                     onClick={handleProcess}
                                     disabled={processing}
-                                    className="w-full bg-white text-amber-600 font-bold py-3 px-6 rounded-xl hover:bg-gray-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+                                    className="w-full bg-white text-amber-600 font-bold py-2 sm:py-3 px-4 sm:px-6 text-sm sm:text-base rounded-xl hover:bg-gray-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
                                 >
                                     {processing ? "Processing..." : `${activeTool === 'merge' ? '🔗 Merge' : activeTool === 'split' ? '✂️ Split' : '📦 Compress'} PDF${activeTool === 'merge' && selectedFiles.length > 1 ? 's' : ''}`}
                                 </button>
@@ -610,13 +610,13 @@ export default function PdfTools() {
 
 
                         {/* File Limits */}
-                        <div className="bg-lime-50 rounded-2xl shadow-lg p-6 w-72">
-                            <h3 className="font-semibold mb-3 flex items-center gap-2">
-                                <PiDotFill className="text-2xl txtColor-Org"/> 
+                        <div className="bg-lime-50 rounded-2xl shadow-lg p-4 sm:p-6 w-full lg:w-72">
+                            <h3 className="font-semibold mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
+                                <PiDotFill className="text-xl sm:text-2xl txtColor-Org"/> 
                                 <span>File Info</span>
                             </h3>
 
-                            <ul className="text-sm space-y-2">
+                            <ul className="text-xs sm:text-sm space-y-1.5 sm:space-y-2">
                                 <li className="flex items-start gap-2">
                                     <span className="text-amber-500">•</span>
                                     <span>Max file size: 500MB</span>
@@ -637,13 +637,13 @@ export default function PdfTools() {
                         </div>
 
                         {/* Security & Privacy */}
-                        <div className="bg-lime-100 rounded-2xl shadow-lg p-6 w-72">
-                            <h3 className="font-semibold mb-3 flex items-center gap-2">
-                                <PiDotFill className="text-2xl txtColor-Org"/> 
+                        <div className="bg-lime-100 rounded-2xl shadow-lg p-4 sm:p-6 w-full lg:w-72">
+                            <h3 className="font-semibold mb-2 sm:mb-3 flex items-center gap-2 text-sm sm:text-base">
+                                <PiDotFill className="text-xl sm:text-2xl txtColor-Org"/> 
                                 <span>Security & Privacy</span>
                             </h3>
 
-                            <ul className="text-sm space-y-2">
+                            <ul className="text-xs sm:text-sm space-y-1.5 sm:space-y-2">
                                 <li className="flex items-start gap-2">
                                     <span className="text-green-500">✓</span>
                                     <span>100% client-side processing</span>

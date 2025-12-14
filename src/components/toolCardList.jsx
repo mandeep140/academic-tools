@@ -4,10 +4,7 @@ import ToolCard from "./toolCard";
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import CollectionsOutlinedIcon from '@mui/icons-material/CollectionsOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined';
-import GeneratingTokensOutlinedIcon from '@mui/icons-material/GeneratingTokensOutlined';
-import PictureAsPdfOutlinedIcon from '@mui/icons-material/PictureAsPdfOutlined';
-// 
+
 
 
 export default function ToolCardList() {
@@ -18,10 +15,6 @@ export default function ToolCardList() {
             <ToolCard to="/file-convert" title="File Converter" para="Convert between PDF, Word, Excel, PPT, and Images" icon={<DescriptionOutlinedIcon />} />
             <ToolCard to="/imageCompressor" title="Image Compressor" para="Compress and resize images efficiently" icon={<CollectionsOutlinedIcon />} />
             <ToolCard to="/imageEditor" title="Image Editor" para="Crop, edit and enhance images with precision" icon={<SearchOutlinedIcon />} />
-            <ToolCard to="/file-convert" title="Document Converter" para="Convert DOCX to PDF or HTML and vice versa" icon={<TaskAltOutlinedIcon />} />
-            <ToolCard to="/imageEditor" title="Background Removal" para="Remove image backgrounds using AI locally" icon={<GeneratingTokensOutlinedIcon />} />
-            <ToolCard to="/pdftools" title="PDF Tools" para="Merge, split, protect, and compress PDFs" icon={<PictureAsPdfOutlinedIcon />} />
-
         </div>
     );
 }
