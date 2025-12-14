@@ -6,6 +6,8 @@ import NavBar from './components/navBar'
 import Home from './routes/home';
 import Tools from './routes/Tools';
 import About from './routes/About';
+import FileConvert from './pages/FileConvert';
+import NotFound from './pages/not-found';
 
 
 import ImgCompressor from './pages/page-2'
@@ -38,7 +40,7 @@ const App = () => {
 
 
         <Route path='/ImageCompressor' element={<ImgCompressor />} ></Route>
-
+        <Route path='/file-convert' element={<FileConvert />} ></Route>
         <Route path='/pdftools' element={<PdfTools />} />
         <Route path='/excelFile' element={<ExcelFile />} />
         <Route path='/imageEditor' element={<ImageEditor />} />
@@ -48,6 +50,7 @@ const App = () => {
         <Route path='/BgRemoval' element={< BackgroundRemoval />} />
         <Route path='/PdfRenderAndView' element={< PDFRenderAndView />} />
         <Route path='/DocsToHtml' element={< DocsToHtml />} />
+        <Route path='*' element={< NotFound />} />
 
       </Routes>
 

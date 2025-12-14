@@ -4,19 +4,17 @@ import { ImUpload2 } from "react-icons/im";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlinePhotoLibrary } from "react-icons/md";
 import ContainBtn from '../components/containBtn';
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 
 export default function ImageCompressor() {
     const [quality, setQuality] = useState(80);
     const [resize, setResize] = useState(false);
-    const [width, setWidth] = useState(1920);
-    const [height, setHeight] = useState(1080);
-    const [aspectRatio, setAspectRatio] = useState(true);
-    const [btnclick, setBtnClick] = useState(false);
+    const [maxWidth, setMaxWidth] = useState(1920);
+    const [maxHeight, setMaxHeight] = useState(1080);
     const [selectedFile, setSelectedFile] = useState(null);
     const [preview, setPreview] = useState(null);
-    const [compressedImage, setCompressedImage] = useState(null);
     const [processing, setProcessing] = useState(false);
+    const [stats, setStats] = useState(null);
     const fileInputRef = useRef(null);
 
     // Handle file selection
@@ -24,20 +22,21 @@ export default function ImageCompressor() {
         const file = e.target.files[0];
         if (file && isValidImage(file)) {
             setSelectedFile(file);
+            setStats(null);
             const reader = new FileReader();
             reader.onloadend = () => {
                 setPreview(reader.result);
             };
             reader.readAsDataURL(file);
         } else {
-            alert("Please select a valid image file (JPEG, PNG, WebP) under 10MB");
+            alert("Please select a valid image file (JPEG, PNG, WebP) under 50MB");
         }
     };
 
     // Validate image file
     const isValidImage = (file) => {
         const validTypes = ['image/jpeg', 'image/png', 'image/webp'];
-        return validTypes.includes(file.type) && file.size <= 10 * 1024 * 1024;
+        return validTypes.includes(file.type) && file.size <= 50 * 1024 * 1024;
     };
 
     // Handle button click
@@ -52,13 +51,14 @@ export default function ImageCompressor() {
         const file = e.dataTransfer.files[0];
         if (file && isValidImage(file)) {
             setSelectedFile(file);
+            setStats(null);
             const reader = new FileReader();
             reader.onloadend = () => {
                 setPreview(reader.result);
             };
             reader.readAsDataURL(file);
         } else {
-            alert("Please select a valid image file (JPEG, PNG, WebP) under 10MB");
+            alert("Please select a valid image file (JPEG, PNG, WebP) under 50MB");
         }
     };
 
@@ -67,50 +67,80 @@ export default function ImageCompressor() {
         e.stopPropagation();
     };
 
-    // Compress image
-    const compressImage = async () => {
+    // Compress and/or resize image
+    const processImage = async () => {
         if (!selectedFile) return;
         
         setProcessing(true);
+        setStats(null);
+        
         try {
-            const image = new Image();
-            image.src = preview;
+            const img = new Image();
+            img.src = preview;
             
             await new Promise((resolve) => {
-                image.onload = resolve;
+                img.onload = resolve;
             });
 
             const canvas = document.createElement('canvas');
-            let newWidth = image.width;
-            let newHeight = image.height;
+            let finalWidth = img.width;
+            let finalHeight = img.height;
 
-            if (resize) {
-                if (aspectRatio) {
-                    const ratio = Math.min(width / image.width, height / image.height);
-                    newWidth = image.width * ratio;
-                    newHeight = image.height * ratio;
-                } else {
-                    newWidth = width;
-                    newHeight = height;
-                }
+            // Apply resize if enabled
+            if (resize && (img.width > maxWidth || img.height > maxHeight)) {
+                const widthRatio = maxWidth / img.width;
+                const heightRatio = maxHeight / img.height;
+                const ratio = Math.min(widthRatio, heightRatio);
+                
+                finalWidth = Math.round(img.width * ratio);
+                finalHeight = Math.round(img.height * ratio);
             }
 
-            canvas.width = newWidth;
-            canvas.height = newHeight;
+            canvas.width = finalWidth;
+            canvas.height = finalHeight;
+            
             const ctx = canvas.getContext('2d');
-            ctx.drawImage(image, 0, 0, newWidth, newHeight);
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+            ctx.drawImage(img, 0, 0, finalWidth, finalHeight);
 
-            const compressedDataUrl = canvas.toDataURL(selectedFile.type, quality / 100);
-            setCompressedImage(compressedDataUrl);
+            // Force JPEG for compression (quality parameter works better with JPEG)
+            // Use original type only if it's already JPEG
+            const qualityValue = quality / 100;
+            let outputFormat = 'image/jpeg';
+            
+            // If original is PNG and quality is high (>90), keep as PNG
+            if (selectedFile.type === 'image/png' && quality > 90) {
+                outputFormat = 'image/png';
+            }
+            
+            const compressedDataUrl = canvas.toDataURL(outputFormat, qualityValue);
 
-            // Create download link
+            // Calculate sizes more accurately
+            const originalSize = selectedFile.size;
+            const base64Length = compressedDataUrl.split(',')[1].length;
+            const compressedSize = Math.round((base64Length * 3) / 4);
+            const reduction = ((originalSize - compressedSize) / originalSize * 100).toFixed(1);
+            
+            // Set stats for display
+            setStats({
+                originalSize: (originalSize / 1024).toFixed(2),
+                compressedSize: (compressedSize / 1024).toFixed(2),
+                reduction: reduction,
+                originalDimensions: `${img.width} x ${img.height}`,
+                newDimensions: `${finalWidth} x ${finalHeight}`
+            });
+            
+            // Download
             const link = document.createElement('a');
-            link.download = `compressed_${selectedFile.name}`;
+            const fileExtension = outputFormat === 'image/jpeg' ? 'jpg' : 'png';
+            link.download = `compressed_${Date.now()}.${fileExtension}`;
             link.href = compressedDataUrl;
             link.click();
+            
         } catch (error) {
-            console.error('Error compressing image:', error);
-            alert('Error compressing image. Please try again.');
+            console.error('Error processing image:', error);
+            alert('Error processing image. Please try again.');
         } finally {
             setProcessing(false);
         }
@@ -130,10 +160,10 @@ export default function ImageCompressor() {
                 </p>
             </div>
 
-            {/* st */}
-            <div className="flex flex-col md:flex-row items-start gap-12">
+            {/* Main Content */}
+            <div className="flex flex-col lg:flex-row items-start gap-8 w-full max-w-7xl px-4">
                 {/* Left Panel - Settings */}
-                <div className="bg-lime-100  shadow-md rounded-xl p-6 w-80 ">
+                <div className="bg-lime-100 shadow-lg rounded-2xl p-6 w-full lg:w-80 hover:shadow-xl transition-shadow">
 
                     <div className="flex items-center gap-2 mb-3">
                         <span className="txtColor-Org text-2xl"> <IoSettingsOutline /> </span>
@@ -142,8 +172,8 @@ export default function ImageCompressor() {
 
                     <p className="text-md  mb-4"> Configure compression options </p>
 
-                    <div className="mb-5">
-                        <label className="block text-gray-700 font-medium text-sm mb-2">
+                    <div className="mb-6">
+                        <label className="block text-gray-700 font-semibold text-sm mb-3">
                             Quality: {quality}%
                         </label>
                         <input
@@ -151,95 +181,76 @@ export default function ImageCompressor() {
                             min="10"
                             max="100"
                             value={quality}
-                            onChange={(event) => setQuality(event.target.value)}
-                            className="w-full accent-yellow-400 cursor-pointer"
+                            onChange={(e) => setQuality(Number(e.target.value))}
+                            className="w-full h-2 accent-amber-500 cursor-pointer"
                         />
-
-                        <p className="text-sm mt-1">
-                            Higher quality = larger file size
-                        </p>
+                        <div className="flex justify-between text-xs text-gray-600 mt-1">
+                            <span>Lower size</span>
+                            <span>Higher quality</span>
+                        </div>
                     </div>
 
-                    <div className="flex items-center justify-between  flex-col gap-2">
-
-                        <div className="flex items-center justify-between ">
-                            <label className="text-gray-700 font-medium text-sm">
-                                Resize Images
+                    <div className="border-t border-gray-300 pt-5 mt-5">
+                        <div className="flex items-center justify-between mb-4">
+                            <label className="text-gray-700 font-semibold text-sm">
+                                Resize Image
                             </label>
-
-                            <label className="relative inline-flex items-center cursor-pointer  ml-4">
+                            <label className="relative inline-flex items-center cursor-pointer">
                                 <input
                                     type="checkbox"
                                     checked={resize}
-                                    onChange={() => { setResize(!resize); setBtnClick(!btnclick) }}
+                                    onChange={() => setResize(!resize)}
                                     className="sr-only peer"
-
                                 />
-
-                                <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-yellow-400 transition-all"></div>
-                                <div className="absolute left-0.5 top-0.5  w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-5 transition-transform"></div>
+                                <div className="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-amber-500 transition-all"></div>
+                                <div className="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-5 transition-transform"></div>
                             </label>
                         </div>
 
-
-                        {btnclick && (
-                            <>
-                                <div className="w-full  py-6 ">
-                                    <label className="block text-gray-700 font-medium text-sm ">
-                                        Max Width: {width}px
+                        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                            resize ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+                        }`}>
+                            <div className="space-y-4 pt-2">
+                                <div>
+                                    <label className="block text-gray-700 font-medium text-sm mb-2">
+                                        Max Width: {maxWidth}px
                                     </label>
                                     <input
                                         type="range"
                                         min="100"
                                         max="4000"
-                                        value={width}
-                                        onChange={(event) => setWidth(event.target.value)}
-                                        className="w-full accent-yellow-400 cursor-pointer mb-4"
+                                        step="50"
+                                        value={maxWidth}
+                                        onChange={(e) => setMaxWidth(Number(e.target.value))}
+                                        className="w-full h-2 accent-amber-500 cursor-pointer"
                                     />
+                                </div>
 
-
-                                    <label className="block text-gray-700 font-medium text-sm">
-                                        Max Height: {height}px
+                                <div>
+                                    <label className="block text-gray-700 font-medium text-sm mb-2">
+                                        Max Height: {maxHeight}px
                                     </label>
                                     <input
                                         type="range"
                                         min="100"
                                         max="4000"
-                                        value={height}
-                                        onChange={(event) => setHeight(event.target.value)}
-                                        className="w-full accent-yellow-400 cursor-pointer"
+                                        step="50"
+                                        value={maxHeight}
+                                        onChange={(e) => setMaxHeight(Number(e.target.value))}
+                                        className="w-full h-2 accent-amber-500 cursor-pointer"
                                     />
                                 </div>
-
-
-                                <div className="flex items-center justify-between ">
-                                    <label className="text-gray-700 font-medium text-sm">
-                                        Maintain Aspect Ratio
-                                    </label>
-
-                                    <label className="relative inline-flex items-center cursor-pointer  ml-4">
-                                        <input
-                                            type="checkbox"
-                                            checked={aspectRatio}
-                                            onChange={() => setAspectRatio(!aspectRatio)}
-                                            className="sr-only peer"
-                                        />
-
-                                        <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-yellow-400 transition-all"></div>
-                                        <div className="absolute left-0.5 top-0.5  w-5 h-5 bg-white rounded-full shadow-md peer-checked:translate-x-5 transition-transform"></div>
-                                    </label>
-                                </div>
-                            </>
-                        )}
-
+                                <p className="text-xs text-gray-600 italic">
+                                    Aspect ratio will be maintained automatically
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
 
-
-
                 {/* Right Panel - Image Compressor */}
-                <div className="bg-green-100  shadow-md rounded-xl p-8 w-[48vw]  pb-14 ">
+                <div className="bg-green-100 shadow-lg rounded-2xl p-8 w-full lg:flex-1 hover:shadow-xl transition-shadow">
                     <div className="flex items-center gap-2 mb-4">
                         <span className="txtColor-Org text-3xl"><MdOutlinePhotoLibrary /></span>
                         <h3 className="font-bold text-gray-800 text-xl">
@@ -248,8 +259,8 @@ export default function ImageCompressor() {
                     </div>
 
                     <div 
-                        className="border-2 border-dashed border-yellow-100 rounded-xl p-12 mt-8 pb-16
-                        flex flex-col items-center justify-center text-center hover:border-yellow-500 transition"
+                        className="border-2 border-dashed border-yellow-400 rounded-xl p-12 mt-8 pb-16 bg-white/50
+                        flex flex-col items-center justify-center text-center hover:border-yellow-500 hover:bg-yellow-50/50 transition-all"
                         onDrop={handleDrop}
                         onDragOver={handleDragOver}
                     >
@@ -275,37 +286,53 @@ export default function ImageCompressor() {
                                     <ContainBtn label="Choose Image" onClick={handleButtonClick} />
                                 </div>
 
-                                <p className="text-xs">
-                                    Supports JPEG, PNG, WebP formats • Max 10MB per image
+                                <p className="text-xs text-gray-600">
+                                    Supports JPEG, PNG, WebP formats • Max 50MB per image
                                 </p>
                             </>
                         ) : (
                             <div className="w-full">
-                                <div className="mb-4">
+                                <div className="mb-6">
                                     <img 
                                         src={preview} 
                                         alt="Preview" 
-                                        className="max-w-full max-h-[300px] mx-auto rounded-lg shadow-md"
+                                        className="max-w-full max-h-[300px] mx-auto rounded-lg shadow-lg border-2 border-gray-200"
                                     />
                                 </div>
                                 
-                                <div className="flex flex-col gap-4">
-                                    <p className="text-sm text-gray-600">
-                                        {selectedFile.name} ({(selectedFile.size / 1024).toFixed(2)} KB)
+                                <div className="bg-white/70 rounded-lg p-4 mb-6">
+                                    <p className="text-sm font-semibold text-gray-700 mb-2">
+                                        📁 {selectedFile.name}
+                                    </p>
+                                    <p className="text-xs text-gray-600">
+                                        Original Size: {(selectedFile.size / 1024).toFixed(2)} KB
                                     </p>
                                     
-                                    <div className="flex gap-4 justify-center">
-                                        <ContainBtn 
-                                            label={processing ? "Processing..." : "Compress Image"} 
-                                            onClick={compressImage}
-                                            disabled={processing}
-                                        />
-                                        <ContainBtn 
-                                            label="Choose Another" 
-                                            onClick={handleButtonClick}
-                                            disabled={processing}
-                                        />
-                                    </div>
+                                    {stats && (
+                                        <div className="mt-4 pt-4 border-t border-gray-300">
+                                            <p className="text-sm font-bold text-green-600 mb-2">✅ Processing Complete!</p>
+                                            <div className="space-y-1 text-xs text-gray-700">
+                                                <p>📏 Dimensions: {stats.originalDimensions} → {stats.newDimensions}</p>
+                                                <p>💾 Compressed Size: {stats.compressedSize} KB</p>
+                                                <p className="font-semibold text-green-600">
+                                                    📉 Reduction: {stats.reduction}%
+                                                </p>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                                
+                                <div className="flex gap-3 justify-center flex-wrap">
+                                    <ContainBtn 
+                                        label={processing ? "Processing..." : "Process Image"} 
+                                        onClick={processImage}
+                                        disabled={processing}
+                                    />
+                                    <ContainBtn 
+                                        label="Choose Another" 
+                                        onClick={handleButtonClick}
+                                        disabled={processing}
+                                    />
                                 </div>
                             </div>
                         )}
@@ -313,8 +340,7 @@ export default function ImageCompressor() {
 
                 </div>
 
-
             </div>
-        </div >
+        </div>
     );
 }
