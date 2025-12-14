@@ -3,7 +3,7 @@ import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import NavBar from './components/navBar'
 
-import Home from './routes/home';
+import Home from './routes/Home';
 import Tools from './routes/Tools';
 import About from './routes/About';
 import FileConvert from './pages/FileConvert';
