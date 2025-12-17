@@ -45,6 +45,11 @@ export default function AboutOffers() {
 
     const team = [
         {
+            name: "Muskan Kumari",
+            role: "Frontend Development",
+            rollNo: "25s12res107"
+        },
+        {
             name: "Mandeep Nagar",
             role: "Logical Part Development",
             rollNo: "25s12res200"
@@ -53,11 +58,6 @@ export default function AboutOffers() {
             name: "Yash Mishra",
             role: "UI/UX Design",
             rollNo: "25s12res222"
-        },
-        {
-            name: "Muskan Kumari",
-            role: "Frontend Development",
-            rollNo: "25s12res107"
         },
         {
             name: "Shagun Mohan",

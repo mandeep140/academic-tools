@@ -63,7 +63,7 @@ const Tools = () => {
 
     return (
         <>
-            <div className=" bg-linear-to-r/decreasing from-sky-100 to-teal-300">
+            <div className="bg-radial to-[#D8F2CF] from-[#ABE2C4]" >
                 {/* Search Section */}
                 <div className="pt-20 sm:pt-24 md:pt-28 text-center px-4">
                     <h3 className="text-3xl sm:text-4xl md:text-5xl py-6 sm:py-8 font-p">Explore Tools</h3>
